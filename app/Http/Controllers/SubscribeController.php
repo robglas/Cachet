@@ -15,12 +15,12 @@ use AltThree\Validator\ValidationException;
 use CachetHQ\Cachet\Bus\Commands\Subscriber\SubscribeSubscriberCommand;
 use CachetHQ\Cachet\Bus\Commands\Subscriber\UnsubscribeSubscriberCommand;
 use CachetHQ\Cachet\Bus\Commands\Subscriber\VerifySubscriberCommand;
-use CachetHQ\Cachet\Bus\Exceptions\Subscriber\AlreadySubscribedException;
-use CachetHQ\Cachet\Facades\Setting;
+use CachetHQ\Cachet\Exceptions\AlreadySubscribedException;
 use CachetHQ\Cachet\Models\Subscriber;
 use GrahamCampbell\Binput\Facades\Binput;
 use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
@@ -36,7 +36,7 @@ class SubscribeController extends Controller
     public function showSubscribe()
     {
         return View::make('subscribe')
-            ->withAboutApp(Markdown::convertToHtml(Setting::get('app_about')));
+            ->withAboutApp(Markdown::convertToHtml(Config::get('setting.app_about')));
     }
 
     /**
