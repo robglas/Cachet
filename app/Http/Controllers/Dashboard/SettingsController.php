@@ -15,6 +15,7 @@ use CachetHQ\Cachet\Models\User;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
@@ -101,7 +102,7 @@ class SettingsController extends Controller
         return View::make('dashboard.settings.app-setup')
             ->withPageTitle(trans('dashboard.settings.app-setup.app-setup').' - '.trans('dashboard.dashboard'))
             ->withSubMenu($this->subMenu)
-            ->withRawAppAbout(Setting::get('app_about'));
+            ->withRawAppAbout(Config::get('app_about'));
     }
 
     /**

@@ -44,12 +44,9 @@ class Repository
     /**
      * Returns a setting from the database.
      *
-     * @param string      $name
-     * @param string|null $default
-     *
      * @return array
      */
-    public function all($name, $default = null)
+    public function all()
     {
         return $this->model->all(['name', 'value'])->pluck('value', 'name')->toArray();
     }
