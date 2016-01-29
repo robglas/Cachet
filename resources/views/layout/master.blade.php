@@ -41,7 +41,7 @@
     <link rel="apple-touch-icon" sizes="152x152" href="/img/apple-touch-icon-152x152.png">
 
 <<<<<<< HEAD
-    <title>{{ $app_name.' | Cachet' }}</title>
+    <title>{{ $app_name }}</title>
 =======
     <title>{{ $site_title }}</title>
 >>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
