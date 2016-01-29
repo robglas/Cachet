@@ -1,0 +1,104 @@
+{
+    "name": "cachethq/cachet",
+    "description": "An open source status page system, for everyone.",
+    "keywords": ["laravel", "cachet", "alt-three", "status", "page"],
+    "type": "project",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "James Brooks",
+            "email": "james@alt-three.com"
+        },
+        {
+            "name": "Graham Campbell",
+            "email": "graham@alt-three.com"
+        },
+        {
+            "name": "Joseph Cohen",
+            "email": "joe@alt-three.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "laravel/framework": "~5.1.26",
+        "alt-three/emoji": "^2.1",
+        "alt-three/validator": "^1.4",
+        "barryvdh/laravel-cors": "^0.7",
+        "doctrine/dbal": "^2.5",
+        "fideloper/proxy": "^3.0",
+        "graham-campbell/binput": "^3.3",
+        "graham-campbell/core": "^4.2",
+        "graham-campbell/markdown": "^5.3",
+        "graham-campbell/throttle": "^5.1",
+        "graham-campbell/exceptions": "^6.1",
+        "guzzlehttp/guzzle": "^6.1",
+        "jenssegers/date": "^3.1",
+        "mccool/laravel-auto-presenter": "^4.2",
+        "pragmarx/google2fa": "^0.7",
+        "rcrowe/twigbridge": "^0.9",
+        "roumen/feed": "^2.9.8"
+    },
+    "require-dev": {
+        "filp/whoops": "^1.1",
+        "fzaninotto/faker": "^1.5",
+        "graham-campbell/testbench-core": "^1.1",
+        "mockery/mockery": "0.9.4",
+        "phpunit/phpunit": "4.8.19"
+    },
+    "autoload": {
+        "classmap": [
+            "database"
+        ],
+        "files": [
+            "app/Http/helpers.php"
+        ],
+        "psr-4": {
+            "CachetHQ\\Cachet\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CachetHQ\\Tests\\Cachet\\": "tests/"
+        }
+    },
+    "scripts": {
+        "pre-install-cmd": [
+            "rm -f compiled.php config.php routes.php services.json"
+        ],
+        "post-install-cmd": [
+            "php artisan optimize --force",
+            "php artisan config:cache",
+            "php artisan route:cache",
+            "chmod -R 755 storage"
+        ],
+        "pre-update-cmd": [
+            "rm -f compiled.php config.php routes.php services.json"
+        ],
+        "post-update-cmd": [
+            "php artisan optimize --force",
+            "php artisan config:cache",
+            "php artisan route:cache",
+            "chmod -R 755 storage"
+        ],
+        "post-create-project-cmd": [
+            "php -r \"copy('.env.example', '.env');\"",
+            "php artisan key:generate"
+        ],
+        "test": [
+            "phpunit"
+        ]
+    },
+    "config": {
+        "platform": {
+            "php": "5.5.9"
+        },
+        "preferred-install": "dist"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0-dev"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
