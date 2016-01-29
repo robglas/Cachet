@@ -52,9 +52,16 @@ return [
     // Metrics
     'metrics' => [
         'filter' => [
+<<<<<<< HEAD
             'hourly'  => '最近12小时',
             'weekly'  => '周',
             'monthly' => '月',
+=======
+            'last_hour' => 'Last Hour',
+            'hourly'    => '最近12小时',
+            'weekly'    => '周',
+            'monthly'   => '月',
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         ],
     ],
 
@@ -63,6 +70,7 @@ return [
         'subscribe' => '订阅最新的更新。',
         'button'    => '订阅',
         'email'     => [
+<<<<<<< HEAD
             'subscribe'    => '订阅电子邮件更新。',
             'subscribed'   => '您已经订阅电子邮件通知，请检查您的电子邮件，确认您的订阅。',
             'verified'     => '您的电子邮件订阅已确认。谢谢！',
@@ -70,6 +78,16 @@ return [
             'unsubscribed' => '您的电子邮件订阅已被取消。',
             'failure'      => '邮件订阅失败。',
             'verify'       => [
+=======
+            'subscribe'          => '订阅电子邮件更新。',
+            'subscribed'         => '您已经订阅电子邮件通知，请检查您的电子邮件，确认您的订阅。',
+            'verified'           => '您的电子邮件订阅已确认。谢谢！',
+            'unsubscribe'        => '取消电子邮件订阅。',
+            'unsubscribed'       => '您的电子邮件订阅已被取消。',
+            'failure'            => '邮件订阅失败。',
+            'already-subscribed' => '邮箱 :email 已加入订阅，请勿重复订阅.',
+            'verify'             => [
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                 'text'           => '请确认您的 :app_name 电子邮件订阅。\\n:link\\n此致，:app_name',
                 'html-preheader' => '请确认您的 :app_name 状态更新邮件订阅。',
                 'html'           => '<p>请确认您的 :app_name 电子邮件订阅。</p><p><a href=":link">:link</a></p><p>此致，:app_name</p>',

@@ -30,8 +30,13 @@
                     @endif
 
                     <div class="form-group">
+<<<<<<< HEAD
                         <label class="sr-only">{{ trans('forms.login.email') }}</label>
                         <input autocomplete="off" class="form-control login-input" placeholder="{{ trans('forms.login.email') }}" required="required" name="email" type="email" autofocus>
+=======
+                        <label class="sr-only">{{ trans('forms.login.login') }}</label>
+                        <input autocomplete="off" class="form-control login-input" placeholder="{{ trans('forms.login.login') }}" required="required" name="login" type="text" value="{{ Binput::old('login') }}" autofocus>
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                     </div>
                     <div class="form-group">
                         <label class="sr-only">{{ trans('forms.login.password') }}</label>

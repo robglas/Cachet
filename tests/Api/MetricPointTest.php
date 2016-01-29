@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Tests\Cachet\Api;
 
+<<<<<<< HEAD
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 use Carbon\Carbon;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
@@ -19,6 +20,18 @@ class MetricPointTest extends AbstractTestCase
 {
     use DatabaseMigrations;
 
+=======
+use Carbon\Carbon;
+
+/**
+ * This is the metric point test class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
+ */
+class MetricPointTest extends AbstractApiTestCase
+{
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
     public function testGetMetricPoint()
     {
         $metric = factory('CachetHQ\Cachet\Models\Metric')->create();
@@ -81,6 +94,12 @@ class MetricPointTest extends AbstractTestCase
 
         $this->beUser();
 
+<<<<<<< HEAD
+=======
+        // prevent tests breaking due to rolling into the next second
+        Carbon::setTestNow(Carbon::now());
+
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         $timezone = 'America/Mexico_City';
         $metric = factory('CachetHQ\Cachet\Models\Metric')->create();
         $timestamp = Carbon::now()->timezone($timezone)->timestamp;

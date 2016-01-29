@@ -24,6 +24,7 @@ class AuthRoutes
      * Define the auth routes.
      *
      * @param \Illuminate\Contracts\Routing\Registrar $router
+<<<<<<< HEAD
      */
     public function map(Registrar $router)
     {
@@ -33,6 +34,14 @@ class AuthRoutes
             'prefix'     => 'auth',
             'setting'    => 'app_name',
         ], function ($router) {
+=======
+     *
+     * @return void
+     */
+    public function map(Registrar $router)
+    {
+        $router->group(['as' => 'auth.', 'middleware' => ['web', 'ready'], 'prefix' => 'auth'], function ($router) {
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
             $router->get('login', [
                 'middleware' => 'guest',
                 'as'         => 'login',
@@ -40,18 +49,29 @@ class AuthRoutes
             ]);
 
             $router->post('login', [
+<<<<<<< HEAD
                 'middleware' => ['guest', 'csrf', 'throttling:10,10'],
                 'uses'       => 'AuthController@postLogin',
             ]);
 
             // Two factor authorization
+=======
+                'middleware' => ['guest', 'throttling:10,10'],
+                'uses'       => 'AuthController@postLogin',
+            ]);
+
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
             $router->get('2fa', [
                 'as'   => 'two-factor',
                 'uses' => 'AuthController@showTwoFactorAuth',
             ]);
 
             $router->post('2fa', [
+<<<<<<< HEAD
                 'middleware' => ['csrf', 'throttling:10,10'],
+=======
+                'middleware' => ['throttling:10,10'],
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                 'uses'       => 'AuthController@postTwoFactor',
             ]);
 

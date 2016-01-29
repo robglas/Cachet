@@ -12,20 +12,31 @@
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
 use AltThree\Validator\ValidationException;
+<<<<<<< HEAD
 use CachetHQ\Cachet\Commands\User\AddTeamMemberCommand;
 use CachetHQ\Cachet\Commands\User\InviteTeamMemberCommand;
 use CachetHQ\Cachet\Commands\User\RemoveUserCommand;
 use CachetHQ\Cachet\Models\User;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Foundation\Bus\DispatchesJobs;
+=======
+use CachetHQ\Cachet\Bus\Commands\User\AddTeamMemberCommand;
+use CachetHQ\Cachet\Bus\Commands\User\InviteTeamMemberCommand;
+use CachetHQ\Cachet\Bus\Commands\User\RemoveUserCommand;
+use CachetHQ\Cachet\Models\User;
+use GrahamCampbell\Binput\Facades\Binput;
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 
 class TeamController extends Controller
 {
+<<<<<<< HEAD
     use DispatchesJobs;
 
+=======
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
     /**
      * Shows the team members view.
      *
@@ -43,6 +54,11 @@ class TeamController extends Controller
     /**
      * Shows the edit team member view.
      *
+<<<<<<< HEAD
+=======
+     * @param \CachetHQ\Cachet\Models\User $user
+     *
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
      * @return \Illuminate\View\View
      */
     public function showTeamMemberView(User $user)
@@ -82,7 +98,11 @@ class TeamController extends Controller
     public function postAddUser()
     {
         try {
+<<<<<<< HEAD
             $this->dispatch(new AddTeamMemberCommand(
+=======
+            dispatch(new AddTeamMemberCommand(
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                 Binput::get('username'),
                 Binput::get('password'),
                 Binput::get('email'),
@@ -131,7 +151,11 @@ class TeamController extends Controller
     public function postInviteUser()
     {
         try {
+<<<<<<< HEAD
             $this->dispatch(new InviteTeamMemberCommand(
+=======
+            dispatch(new InviteTeamMemberCommand(
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                 array_unique(array_filter((array) Binput::get('emails')))
             ));
         } catch (ValidationException $e) {
@@ -154,7 +178,11 @@ class TeamController extends Controller
      */
     public function deleteUser(User $user)
     {
+<<<<<<< HEAD
         $this->dispatch(new RemoveUserCommand($user));
+=======
+        dispatch(new RemoveUserCommand($user));
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 
         return Redirect::route('dashboard.team.index')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.team.delete.success')));

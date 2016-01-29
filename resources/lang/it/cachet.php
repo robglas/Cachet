@@ -52,9 +52,16 @@ return [
     // Metrics
     'metrics' => [
         'filter' => [
+<<<<<<< HEAD
             'hourly'  => 'Ultime 12 ore',
             'weekly'  => 'Settimana',
             'monthly' => 'Mese',
+=======
+            'last_hour' => 'Last Hour',
+            'hourly'    => 'Ultime 12 ore',
+            'weekly'    => 'Settimana',
+            'monthly'   => 'Mese',
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         ],
     ],
 
@@ -63,6 +70,7 @@ return [
         'subscribe' => 'Iscriviti per ricevere gli aggiornamenti più recenti.',
         'button'    => 'Iscriviti',
         'email'     => [
+<<<<<<< HEAD
             'subscribe'    => 'Iscriviti agli aggiornamenti via email.',
             'subscribed'   => 'Sei stato iscritto alle notifiche via email, controlla la tua casella per confermare l\'iscrizione.',
             'verified'     => 'La tua iscrizione via email è stata confermata. Grazie!',
@@ -70,6 +78,16 @@ return [
             'unsubscribed' => 'La tua iscrizione via email è stata cancellata.',
             'failure'      => 'Qualcosa è andato storto con l\'iscrizione.',
             'verify'       => [
+=======
+            'subscribe'          => 'Iscriviti agli aggiornamenti via email.',
+            'subscribed'         => 'Sei stato iscritto alle notifiche via email, controlla la tua casella per confermare l\'iscrizione.',
+            'verified'           => 'La tua iscrizione via email è stata confermata. Grazie!',
+            'unsubscribe'        => 'Annulla l\'iscrizione agli aggiornamenti via email.',
+            'unsubscribed'       => 'La tua iscrizione via email è stata cancellata.',
+            'failure'            => 'Qualcosa è andato storto con l\'iscrizione.',
+            'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
+            'verify'             => [
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                 'text'           => "Conferma la tua iscrizione via email agli aggiornamenti dello stato di :app_name.\n:link\Grazie, :app_name",
                 'html-preheader' => 'Conferma la tua iscrizione via email agli aggiornamento dello stato di :app_name.',
                 'html'           => '<p>Conferma la tua iscrizione via email agli aggiornamenti dello stato di :app_name.</p><p><a href=":link">:link</a></p><p>Grazie, :app_name</p>',

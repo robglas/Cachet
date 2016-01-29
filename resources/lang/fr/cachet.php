@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 <?php
 
 /*
@@ -52,9 +56,16 @@ return [
     // Metrics
     'metrics' => [
         'filter' => [
+<<<<<<< HEAD
             'hourly'  => 'Last 12 Hours',
             'weekly'  => 'Week',
             'monthly' => 'Month',
+=======
+            'last_hour' => 'Last Hour',
+            'hourly'    => 'Last 12 Hours',
+            'weekly'    => 'Week',
+            'monthly'   => 'Month',
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         ],
     ],
 
@@ -63,6 +74,7 @@ return [
         'subscribe' => 'Abonnez-vous pour obtenir les dernières mises à jour.',
         'button'    => 'S\'abonner',
         'email'     => [
+<<<<<<< HEAD
             'subscribe'    => 'S\'abonner aux mises à jour par courriel.',
             'subscribed'   => 'Vous êtes abonné aux notifications par courriel, veuillez vérifier votre messagerie pour confirmer votre abonnement.',
             'verified'     => 'Votre abonnement par courriel a été confirmé. Merci !',
@@ -70,6 +82,16 @@ return [
             'unsubscribed' => 'Votre abonnement par courriel a été annulé.',
             'failure'      => 'Quelque chose s\'est mal passé avec l\'abonnement.',
             'verify'       => [
+=======
+            'subscribe'          => 'S\'abonner aux mises à jour par courriel.',
+            'subscribed'         => 'Vous êtes abonné aux notifications par courriel, veuillez vérifier votre messagerie pour confirmer votre abonnement.',
+            'verified'           => 'Votre abonnement par courriel a été confirmé. Merci !',
+            'unsubscribe'        => 'Désinscription des mises à jour par courriel.',
+            'unsubscribed'       => 'Votre abonnement par courriel a été annulé.',
+            'failure'            => 'Quelque chose s\'est mal passé avec l\'abonnement.',
+            'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
+            'verify'             => [
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                 'text'           => "Veuillez confirmer votre abonnement par courriel aux mises à jour d'état de :app_name.\\n:link\\nMerci, :app_name",
                 'html-preheader' => 'Veuillez confirmer votre abonnement par courriel aux mises à jour de :app_name.',
                 'html'           => '',

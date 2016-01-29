@@ -16,6 +16,20 @@ use CachetHQ\Cachet\Models\Metric;
 interface MetricInterface
 {
     /**
+<<<<<<< HEAD
+=======
+     * Returns metrics for the last hour.
+     *
+     * @param \CachetHQ\Cachet\Models\Metric $metric
+     * @param int                            $hour
+     * @param int                            $minute
+     *
+     * @return int
+     */
+    public function getPointsLastHour(Metric $metric, $hour, $minute);
+
+    /**
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
      * Returns metrics for a given hour.
      *
      * @param \CachetHQ\Cachet\Models\Metric $metric
@@ -29,6 +43,10 @@ interface MetricInterface
      * Returns metrics for the week.
      *
      * @param \CachetHQ\Cachet\Models\Metric $metric
+<<<<<<< HEAD
+=======
+     * @param int                            $day
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
      *
      * @return int
      */

@@ -27,6 +27,10 @@ return [
 
     // Login form fields
     'login' => [
+<<<<<<< HEAD
+=======
+        'login'         => 'Username or Email',
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         'email'         => 'crwdns217:0crwdne217:0',
         'password'      => 'crwdns381:0crwdne381:0',
         '2fauth'        => 'crwdns382:0crwdne382:0',

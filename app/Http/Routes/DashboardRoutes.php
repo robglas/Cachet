@@ -24,6 +24,7 @@ class DashboardRoutes
      * Define the dashboard routes.
      *
      * @param \Illuminate\Contracts\Routing\Registrar $router
+<<<<<<< HEAD
      */
     public function map(Registrar $router)
     {
@@ -34,16 +35,28 @@ class DashboardRoutes
             'as'         => 'dashboard.',
         ], function ($router) {
             // Dashboard
+=======
+     *
+     * @return void
+     */
+    public function map(Registrar $router)
+    {
+        $router->group(['middleware' => ['web', 'auth'], 'prefix' => 'dashboard', 'namespace' => 'Dashboard', 'as' => 'dashboard.'], function ($router) {
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
             $router->get('/', [
                 'as'   => 'index',
                 'uses' => 'DashboardController@showDashboard',
             ]);
 
+<<<<<<< HEAD
             // Components
             $router->group([
                 'as'     => 'components.',
                 'prefix' => 'components',
             ], function ($router) {
+=======
+            $router->group(['as' => 'components.', 'prefix' => 'components'], function ($router) {
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                 $router->get('/', [
                     'as'   => 'index',
                     'uses' => 'ComponentController@showComponents',
@@ -76,11 +89,15 @@ class DashboardRoutes
                 $router->post('{component}/edit', 'ComponentController@updateComponentAction');
             });
 
+<<<<<<< HEAD
             // Incidents
             $router->group([
                 'as'     => 'incidents.',
                 'prefix' => 'incidents',
             ], function ($router) {
+=======
+            $router->group(['as' => 'incidents.', 'prefix' => 'incidents'], function ($router) {
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                 $router->get('/', [
                     'as'   => 'index',
                     'uses' => 'IncidentController@showIncidents',
@@ -101,11 +118,15 @@ class DashboardRoutes
                 $router->post('{incident}/edit', 'IncidentController@editIncidentAction');
             });
 
+<<<<<<< HEAD
             // Scheduled Maintenance
             $router->group([
                 'as'     => 'schedule.',
                 'prefix' => 'schedule',
             ], function ($router) {
+=======
+            $router->group(['as' => 'schedule.', 'prefix' => 'schedule'], function ($router) {
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                 $router->get('/', [
                     'as'   => 'index',
                     'uses' => 'ScheduleController@showIndex',
@@ -126,11 +147,15 @@ class DashboardRoutes
                 ]);
             });
 
+<<<<<<< HEAD
             // Incident Templates
             $router->group([
                 'as'     => 'templates.',
                 'prefix' => 'templates',
             ], function ($router) {
+=======
+            $router->group(['as' => 'templates.', 'prefix' => 'templates'], function ($router) {
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                 $router->get('/', [
                     'as'   => 'index',
                     'uses' => 'IncidentController@showTemplates',
@@ -148,11 +173,15 @@ class DashboardRoutes
                 $router->delete('{incident_template}/delete', 'IncidentController@deleteTemplateAction');
             });
 
+<<<<<<< HEAD
             // Subscribers
             $router->group([
                 'as'     => 'subscribers.',
                 'prefix' => 'subscribers',
             ], function ($router) {
+=======
+            $router->group(['as'     => 'subscribers.', 'prefix' => 'subscribers'], function ($router) {
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                 $router->get('/', [
                     'as'   => 'index',
                     'uses' => 'SubscriberController@showSubscribers',
@@ -165,11 +194,15 @@ class DashboardRoutes
                 $router->delete('{subscriber}/delete', 'SubscriberController@deleteSubscriberAction');
             });
 
+<<<<<<< HEAD
             // Metrics
             $router->group([
                 'as'     => 'metrics.',
                 'prefix' => 'metrics',
             ], function ($router) {
+=======
+            $router->group(['as'  => 'metrics.', 'prefix' => 'metrics'], function ($router) {
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                 $router->get('/', [
                     'as'   => 'index',
                     'uses' => 'MetricController@showMetrics',
@@ -187,11 +220,15 @@ class DashboardRoutes
                 $router->post('{metric}/edit', 'MetricController@editMetricAction');
             });
 
+<<<<<<< HEAD
             // Team Members
             $router->group([
                 'as'     => 'team.',
                 'prefix' => 'team',
             ], function ($router) {
+=======
+            $router->group(['as' => 'team.', 'prefix' => 'team'], function ($router) {
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                 $router->get('/', [
                     'as'   => 'index',
                     'uses' => 'TeamController@showTeamView',
@@ -214,11 +251,15 @@ class DashboardRoutes
                 });
             });
 
+<<<<<<< HEAD
             // Settings
             $router->group([
                 'as'     => 'settings.',
                 'prefix' => 'settings',
             ], function ($router) {
+=======
+            $router->group(['as' => 'settings.', 'prefix' => 'settings'], function ($router) {
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                 $router->get('setup', [
                     'as'   => 'setup',
                     'uses' => 'SettingsController@showSetupView',
@@ -246,7 +287,10 @@ class DashboardRoutes
                 $router->post('/', 'SettingsController@postSettings');
             });
 
+<<<<<<< HEAD
             // User Settings
+=======
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
             $router->group(['prefix' => 'user'], function ($router) {
                 $router->get('/', [
                     'as'   => 'user',
@@ -256,15 +300,22 @@ class DashboardRoutes
                 $router->get('{user}/api/regen', 'UserController@regenerateApiKey');
             });
 
+<<<<<<< HEAD
             /*
              * Internal API.
              * This should only be used for making requests within the dashboard.
              */
+=======
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
             $router->group(['prefix' => 'api'], function ($router) {
                 $router->get('incidents/templates', 'ApiController@getIncidentTemplate');
                 $router->post('components/groups/order', 'ApiController@postUpdateComponentGroupOrder');
                 $router->post('components/order', 'ApiController@postUpdateComponentOrder');
                 $router->post('components/{component}', 'ApiController@postUpdateComponent');
+<<<<<<< HEAD
+=======
+                $router->get('system/version', 'ApiController@checkVersion');
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
             });
         });
     }

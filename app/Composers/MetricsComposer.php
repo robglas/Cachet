@@ -47,6 +47,7 @@ class MetricsComposer
         $metrics = null;
         $metricData = [];
         if ($displayMetrics = Setting::get('display_graphs')) {
+<<<<<<< HEAD
             $metrics = Metric::where('display_chart', 1)->get();
 
             $metrics->map(function ($metric) use (&$metricData) {
@@ -54,6 +55,16 @@ class MetricsComposer
                     'today' => $this->metricRepository->listPointsToday($metric),
                     'week'  => $this->metricRepository->listPointsForWeek($metric),
                     'month' => $this->metricRepository->listPointsForMonth($metric),
+=======
+            $metrics = Metric::where('display_chart', 1)->orderBy('id')->get();
+
+            $metrics->map(function ($metric) use (&$metricData) {
+                $metricData[$metric->id] = [
+                    'last_hour' => $this->metricRepository->listPointsLastHour($metric),
+                    'today'     => $this->metricRepository->listPointsToday($metric),
+                    'week'      => $this->metricRepository->listPointsForWeek($metric),
+                    'month'     => $this->metricRepository->listPointsForMonth($metric),
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                 ];
             });
         }

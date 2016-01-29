@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
+<<<<<<< HEAD
 use CachetHQ\Cachet\Commands\Metric\AddMetricCommand;
 use CachetHQ\Cachet\Commands\Metric\RemoveMetricCommand;
 use CachetHQ\Cachet\Commands\Metric\UpdateMetricCommand;
@@ -19,10 +20,20 @@ use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Database\QueryException;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Http\Request;
+=======
+use CachetHQ\Cachet\Bus\Commands\Metric\AddMetricCommand;
+use CachetHQ\Cachet\Bus\Commands\Metric\RemoveMetricCommand;
+use CachetHQ\Cachet\Bus\Commands\Metric\UpdateMetricCommand;
+use CachetHQ\Cachet\Models\Metric;
+use GrahamCampbell\Binput\Facades\Binput;
+use Illuminate\Database\QueryException;
+use Illuminate\Support\Facades\Request;
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class MetricController extends AbstractApiController
 {
+<<<<<<< HEAD
     use DispatchesJobs;
 
     /**
@@ -37,6 +48,18 @@ class MetricController extends AbstractApiController
         $metrics = Metric::paginate(Binput::get('per_page', 20));
 
         return $this->paginator($metrics, $request);
+=======
+    /**
+     * Get all metrics.
+     *
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public function getMetrics()
+    {
+        $metrics = Metric::paginate(Binput::get('per_page', 20));
+
+        return $this->paginator($metrics, Request::instance());
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
     }
 
     /**
@@ -71,14 +94,23 @@ class MetricController extends AbstractApiController
     public function postMetrics()
     {
         try {
+<<<<<<< HEAD
             $metric = $this->dispatch(new AddMetricCommand(
+=======
+            $metric = dispatch(new AddMetricCommand(
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                 Binput::get('name'),
                 Binput::get('suffix'),
                 Binput::get('description'),
                 Binput::get('default_value'),
                 Binput::get('calc_type', 0),
                 Binput::get('display_chart'),
+<<<<<<< HEAD
                 Binput::get('places', 2)
+=======
+                Binput::get('places', 2),
+                Binput::get('view', 1)
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
             ));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();
@@ -97,7 +129,11 @@ class MetricController extends AbstractApiController
     public function putMetric(Metric $metric)
     {
         try {
+<<<<<<< HEAD
             $metric = $this->dispatch(new UpdateMetricCommand(
+=======
+            $metric = dispatch(new UpdateMetricCommand(
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                 $metric,
                 Binput::get('name'),
                 Binput::get('suffix'),
@@ -105,7 +141,12 @@ class MetricController extends AbstractApiController
                 Binput::get('default_value'),
                 Binput::get('calc_type', 0),
                 Binput::get('display_chart'),
+<<<<<<< HEAD
                 Binput::get('places', 2)
+=======
+                Binput::get('places', 2),
+                Binput::get('view', 1)
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
             ));
         } catch (QueryException $e) {
             throw new BadRequestHttpException();
@@ -123,7 +164,11 @@ class MetricController extends AbstractApiController
      */
     public function deleteMetric(Metric $metric)
     {
+<<<<<<< HEAD
         $this->dispatch(new RemoveMetricCommand($metric));
+=======
+        dispatch(new RemoveMetricCommand($metric));
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 
         return $this->noContent();
     }

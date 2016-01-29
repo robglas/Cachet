@@ -26,8 +26,15 @@ return [
     */
 
     'transformers' => [
+<<<<<<< HEAD
         'GrahamCampbell\Exceptions\Transformers\CsrfTransformer',
         'CachetHQ\Cachet\Exceptions\Transformers\ModelNotFoundTransformer',
+=======
+        'GrahamCampbell\Exceptions\Transformers\AuthTransformer',
+        'GrahamCampbell\Exceptions\Transformers\CsrfTransformer',
+        'GrahamCampbell\Exceptions\Transformers\ModelTransformer',
+        'CachetHQ\Cachet\Foundation\Exceptions\Transformers\BusTransformer',
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
     ],
 
     /*
@@ -45,8 +52,13 @@ return [
     */
 
     'displayers' => [
+<<<<<<< HEAD
         'CachetHQ\Cachet\Exceptions\Displayers\JsonValidationDisplayer',
         'CachetHQ\Cachet\Exceptions\Displayers\RedirectDisplayer',
+=======
+        'CachetHQ\Cachet\Foundation\Exceptions\Displayers\JsonValidationDisplayer',
+        'CachetHQ\Cachet\Foundation\Exceptions\Displayers\RedirectDisplayer',
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         'GrahamCampbell\Exceptions\Displayers\DebugDisplayer',
         'GrahamCampbell\Exceptions\Displayers\HtmlDisplayer',
         'GrahamCampbell\Exceptions\Displayers\JsonDisplayer',
@@ -70,7 +82,11 @@ return [
         'GrahamCampbell\Exceptions\Filters\VerboseFilter',
         'GrahamCampbell\Exceptions\Filters\CanDisplayFilter',
         'GrahamCampbell\Exceptions\Filters\ContentTypeFilter',
+<<<<<<< HEAD
         'CachetHQ\Cachet\Exceptions\Filters\ApiFilter',
+=======
+        'CachetHQ\Cachet\Foundation\Exceptions\Filters\ApiFilter',
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
     ],
 
     /*
@@ -100,8 +116,14 @@ return [
     */
 
     'levels' => [
+<<<<<<< HEAD
         'Illuminate\Session\TokenMismatchException'                     => 'notice',
         'Illuminate\Database\Eloquent\ModelNotFoundException'           => 'warning',
+=======
+        'Illuminate\Auth\Access\AuthorizationException'                 => 'warning',
+        'Illuminate\Database\Eloquent\ModelNotFoundException'           => 'warning',
+        'Illuminate\Session\TokenMismatchException'                     => 'notice',
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         'Symfony\Component\HttpKernel\Exception\HttpExceptionInterface' => 'warning',
         'Symfony\Component\Debug\Exception\FatalErrorException'         => 'critical',
         'Exception'                                                     => 'error',

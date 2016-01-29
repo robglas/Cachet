@@ -27,6 +27,10 @@ return [
 
     // Login form fields
     'login' => [
+<<<<<<< HEAD
+=======
+        'login'         => 'Username or Email',
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         'email'         => '電子郵箱',
         'password'      => '密碼',
         '2fauth'        => '雙因素驗證代碼',

@@ -20,7 +20,22 @@ class Metric extends Model implements HasPresenter
 {
     use ValidatingTrait;
 
+<<<<<<< HEAD
     const CALC_SUM = 0;
+=======
+    /**
+     * The calculation type of sum.
+     *
+     * @var int
+     */
+    const CALC_SUM = 0;
+
+    /**
+     * The calculation type of average.
+     *
+     * @var int
+     */
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
     const CALC_AVG = 1;
 
     /**
@@ -34,6 +49,10 @@ class Metric extends Model implements HasPresenter
         'default_value' => 0,
         'calc_type'     => 0,
         'places'        => 2,
+<<<<<<< HEAD
+=======
+        'default_view'  => 1,
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
     ];
 
     /**
@@ -42,12 +61,19 @@ class Metric extends Model implements HasPresenter
      * @var string[]
      */
     protected $casts = [
+<<<<<<< HEAD
         'id'            => 'int',
+=======
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         'name'          => 'string',
         'display_chart' => 'bool',
         'default_value' => 'int',
         'calc_type'     => 'int',
         'places'        => 'int',
+<<<<<<< HEAD
+=======
+        'default_view'  => 'int',
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
     ];
 
     /**
@@ -63,6 +89,10 @@ class Metric extends Model implements HasPresenter
         'default_value',
         'calc_type',
         'places',
+<<<<<<< HEAD
+=======
+        'default_view',
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
     ];
 
     /**
@@ -75,7 +105,12 @@ class Metric extends Model implements HasPresenter
         'suffix'        => 'required',
         'display_chart' => 'bool',
         'default_value' => 'numeric',
+<<<<<<< HEAD
         'places'        => 'numeric|min:0|max:4',
+=======
+        'places'        => 'numeric|between:0,4',
+        'default_view'  => 'numeric|between:0,3',
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
     ];
 
     /**

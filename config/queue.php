@@ -20,8 +20,12 @@ return [
     | API, giving you convenient access to each back-end using the same
     | syntax for each one. Here you may set the default queue driver.
     |
+<<<<<<< HEAD
     | Supported: "null", "sync", "database", "beanstalkd",
     |            "sqs", "iron", "redis"
+=======
+    | Supported: "null", "sync", "database", "beanstalkd", "sqs", "redis"
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
     |
     */
 
@@ -62,6 +66,7 @@ return [
             'driver' => 'sqs',
             'key'    => 'your-public-key',
             'secret' => 'your-secret-key',
+<<<<<<< HEAD
             'queue'  => 'your-queue-url',
             'region' => 'us-east-1',
         ],
@@ -75,6 +80,13 @@ return [
             'encrypt' => true,
         ],
 
+=======
+            'prefix' => 'https://sqs.us-east-1.amazonaws.com/your-account-id',
+            'queue'  => 'your-queue-name',
+            'region' => 'us-east-1',
+        ],
+
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         'redis' => [
             'driver'     => 'redis',
             'connection' => 'default',

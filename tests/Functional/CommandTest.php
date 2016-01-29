@@ -14,6 +14,14 @@ namespace CachetHQ\Tests\Cachet\Functional;
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 use Illuminate\Contracts\Console\Kernel;
 
+<<<<<<< HEAD
+=======
+/**
+ * This is the command test class.
+ *
+ * @author Graham Campbell <graham@alt-three.com>
+ */
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 class CommandTest extends AbstractTestCase
 {
     public function testMigrations()

@@ -13,8 +13,14 @@
             </div>
             <div class="col-xs-2">
                 <div class="dropdown pull-right">
+<<<<<<< HEAD
                     <a href="javascript: void(0);" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class='filter'>{{ trans('cachet.metrics.filter.hourly') }}</span> <span class="caret"></span></a>
                     <ul class="dropdown-menu dropdown-menu-right">
+=======
+                    <a href="javascript: void(0);" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class='filter'>{{ trans('cachet.metrics.filter.'.$metric->trans_string_name) }}</span> <span class="caret"></span></a>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li><a href="#" data-filter-type="last_hour">{{ trans('cachet.metrics.filter.last_hour') }}</a></li>
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                         <li><a href="#" data-filter-type="today">{{ trans('cachet.metrics.filter.hourly') }}</a></li>
                         <li><a href="#" data-filter-type="week">{{ trans('cachet.metrics.filter.weekly') }}</a></li>
                         <li><a href="#" data-filter-type="month">{{ trans('cachet.metrics.filter.monthly') }}</a></li>
@@ -25,7 +31,11 @@
         <div class="row">
             <div class="col-xs-12">
                 <div>
+<<<<<<< HEAD
                     <canvas id="metric-{{ $metric->id }}" data-metric-name="{{ $metric->name }}" data-metric-suffix="{{ $metric->suffix }}" data-metric-id="{{ $metric->id }}" data-metric-group="today" height="160" width="600"></canvas>
+=======
+                    <canvas id="metric-{{ $metric->id }}" data-metric-name="{{ $metric->name }}" data-metric-suffix="{{ $metric->suffix }}" data-metric-id="{{ $metric->id }}" data-metric-group="{{ $metric->view_name }}" height="160" width="600"></canvas>
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                 </div>
             </div>
         </div>

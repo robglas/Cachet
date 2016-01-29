@@ -21,6 +21,7 @@ class Acceptable
      *
      * @param \Illuminate\Http\Request $request
      * @param \Closure                 $next
+<<<<<<< HEAD
      * @param string                   $type
      *
      * @return mixed
@@ -28,6 +29,15 @@ class Acceptable
     public function handle($request, Closure $next, $type)
     {
         if (!$request->accepts($type)) {
+=======
+     * @param string|null              $type
+     *
+     * @return mixed
+     */
+    public function handle($request, Closure $next, $type = null)
+    {
+        if (!$request->accepts($type ?: 'accept:application/json')) {
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
             throw new NotAcceptableHttpException();
         }
 

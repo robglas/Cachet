@@ -52,9 +52,16 @@ return [
     // Metrics
     'metrics' => [
         'filter' => [
+<<<<<<< HEAD
             'hourly'  => 'Letzte 12 Stunden',
             'weekly'  => 'Wöchentlich',
             'monthly' => 'Monatlich',
+=======
+            'last_hour' => 'Last Hour',
+            'hourly'    => 'Letzte 12 Stunden',
+            'weekly'    => 'Wöchentlich',
+            'monthly'   => 'Monatlich',
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         ],
     ],
 
@@ -63,6 +70,7 @@ return [
         'subscribe' => 'Abonnieren Sie um die neuesten Updates zu erhalten.',
         'button'    => 'Abonnieren',
         'email'     => [
+<<<<<<< HEAD
             'subscribe'    => 'Aktualisierungen per E-Mail abonnieren.',
             'subscribed'   => 'Sie haben E-Mail-Benachrichtigungen abonniert, überprüfen Sie bitte Ihre E-Mail, um Ihr Abonnement zu bestätigen.',
             'verified'     => 'Ihre E-Mail-Abonnement ist bestätigt worden. Danke!',
@@ -70,6 +78,16 @@ return [
             'unsubscribed' => 'Ihre E-Mail-Abonnement wurde gekündigt.',
             'failure'      => 'Etwas ist mit dem Abonnement schief gelaufen.',
             'verify'       => [
+=======
+            'subscribe'          => 'Aktualisierungen per E-Mail abonnieren.',
+            'subscribed'         => 'Sie haben E-Mail-Benachrichtigungen abonniert, überprüfen Sie bitte Ihre E-Mail, um Ihr Abonnement zu bestätigen.',
+            'verified'           => 'Ihre E-Mail-Abonnement ist bestätigt worden. Danke!',
+            'unsubscribe'        => 'Von E-Mail-Updates deabonnieren.',
+            'unsubscribed'       => 'Ihre E-Mail-Abonnement wurde gekündigt.',
+            'failure'            => 'Etwas ist mit dem Abonnement schief gelaufen.',
+            'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
+            'verify'             => [
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                 'text'           => 'Bitte bestätigen Sie Ihre E-Mail-Abonnement zu :app_name Status-Aktualisierungen.\\n:link\\nDanke, :app_name',
                 'html-preheader' => 'Bitte bestätigen Sie Ihre E-Mail-Abonnement zu :app_name Status-Aktualisierungen.',
                 'html'           => '<p>Bestätigen Sie bitte Ihr E-Mail-Abonnement für :app_name Statusaktualisierungen.</p><p><a href=":link">:link</a></p><p>Danke, :app_name</p>',

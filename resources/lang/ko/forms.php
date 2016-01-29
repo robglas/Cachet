@@ -27,6 +27,10 @@ return [
 
     // Login form fields
     'login' => [
+<<<<<<< HEAD
+=======
+        'login'         => 'Username or Email',
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         'email'         => '이메일',
         'password'      => '비밀번호',
         '2fauth'        => '인증 코드',

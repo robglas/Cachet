@@ -60,7 +60,11 @@ class Invite extends Model
      *
      * @return bool
      */
+<<<<<<< HEAD
     public function claimed()
+=======
+    public function getIsClaimedAttribute()
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
     {
         return $this->claimed_at !== null;
     }

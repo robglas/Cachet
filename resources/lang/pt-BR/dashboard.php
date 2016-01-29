@@ -33,6 +33,7 @@ return [
 
         // Incident templates
         'templates' => [
+<<<<<<< HEAD
             'title' => 'Template de incidentes',
             'add'   => [
                 'title'   => 'Criar um template de incidente',
@@ -43,6 +44,23 @@ return [
                 'title'   => 'Editar template',
                 'success' => 'Template foi atualizado!',
                 'failure' => 'Algo deu errado ao atualizar o template de incidente',
+=======
+            'title' => 'Incidentes Templates',
+            'add'   => [
+                'title'   => 'Criar um template de incidente',
+                'message' => 'Você deve adicionar um template de incidente.',
+                'success' => 'Template criado.',
+                'failure' => 'Ocorreu algum erro ao criar o template, tente novamente.',
+            ],
+            'edit' => [
+                'title'   => 'Editar Template',
+                'success' => 'Template foi atualizado!',
+                'failure' => 'Ocorreu algum erro ao editar o template, tente novamente.',
+            ],
+            'delete' => [
+                'success' => 'O Template foi deletado.',
+                'failure' => 'Ocorreu algum erro ao deletar o template, tente novamente.',
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
             ],
         ],
     ],
@@ -167,7 +185,11 @@ return [
             'analytics' => 'Analytics',
         ],
         'localization' => [
+<<<<<<< HEAD
             'localization' => 'Localization',
+=======
+            'localization' => 'Localização',
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         ],
         'security' => [
             'security' => 'Segurança',

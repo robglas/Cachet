@@ -1,10 +1,17 @@
 language: php
 
 php:
+<<<<<<< HEAD
   - 7.0
   - 5.6
   - 5.5
   - 5.5.9
+=======
+  - 5.5.9
+  - 5.5
+  - 5.6
+  - 7.0
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
   - hhvm
 
 sudo: false
@@ -13,9 +20,18 @@ install:
   - travis_retry composer install --no-interaction --no-scripts --prefer-source
 
 script:
+<<<<<<< HEAD
   - if [ "$TRAVIS_PHP_VERSION" != "5.5.9" ] && [ "$TRAVIS_PHP_VERSION" != "5.5" ] && [ "$TRAVIS_PHP_VERSION" != "5.6" ]; then vendor/bin/phpunit; fi
   - if [ "$TRAVIS_PHP_VERSION" == "5.5.9" ] || [ "$TRAVIS_PHP_VERSION" == "5.5" ] || [ "$TRAVIS_PHP_VERSION" == "5.6" ]; then vendor/bin/phpunit --coverage-clover build/logs/clover.xml; fi
 
 after_script:
   - if [ "$TRAVIS_PHP_VERSION" == "5.5.9" ] || [ "$TRAVIS_PHP_VERSION" == "5.5" ] || [ "$TRAVIS_PHP_VERSION" == "5.6" ]; then wget https://scrutinizer-ci.com/ocular.phar; fi
   - if [ "$TRAVIS_PHP_VERSION" == "5.5.9" ] || [ "$TRAVIS_PHP_VERSION" == "5.5" ] || [ "$TRAVIS_PHP_VERSION" == "5.6" ]; then php ocular.phar code-coverage:upload --format=php-clover build/logs/clover.xml; fi
+=======
+  - if [ "$TRAVIS_PHP_VERSION" != "5.6" ] || [ "$TRAVIS_PULL_REQUEST" != false ]; then vendor/bin/phpunit; fi
+  - if [ "$TRAVIS_PHP_VERSION" == "5.6" ] && [ "$TRAVIS_PULL_REQUEST" == false ]; then vendor/bin/phpunit --coverage-clover build/logs/clover.xml; fi
+
+after_script:
+  - if [ "$TRAVIS_PHP_VERSION" == "5.6" ] && [ "$TRAVIS_PULL_REQUEST" == false ]; then wget https://scrutinizer-ci.com/ocular.phar; fi
+  - if [ "$TRAVIS_PHP_VERSION" == "5.6" ] && [ "$TRAVIS_PULL_REQUEST" == false ]; then php ocular.phar code-coverage:upload --format=php-clover build/logs/clover.xml; fi
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52

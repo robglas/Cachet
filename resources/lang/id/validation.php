@@ -67,6 +67,10 @@ return [
     'regex'                => 'Format :attribute tidak benar.',
     'required'             => ':attribute belum diisi.',
     'required_if'          => ':attribute harus diisi jika :other :value.',
+<<<<<<< HEAD
+=======
+    'required_unless'      => 'The :attribute field is required unless :other is in :values.',
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
     'required_with'        => ':attribute harus diisi jika ada :values.',
     'required_with_all'    => ':attribute harus diisi jika ada :values.',
     'required_without'     => ':attribute harus diisi jika tidak ada :values .',

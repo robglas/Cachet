@@ -24,6 +24,7 @@ class StatusPageRoutes
      * Define the status page routes.
      *
      * @param \Illuminate\Contracts\Routing\Registrar $router
+<<<<<<< HEAD
      */
     public function map(Registrar $router)
     {
@@ -31,6 +32,14 @@ class StatusPageRoutes
             'middleware' => ['app.hasSetting', 'localize'],
             'setting'    => 'app_name',
         ], function ($router) {
+=======
+     *
+     * @return void
+     */
+    public function map(Registrar $router)
+    {
+        $router->group(['middleware' => ['web', 'ready', 'localize']], function ($router) {
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
             $router->get('/', [
                 'as'   => 'status-page',
                 'uses' => 'StatusPageController@showIndex',

@@ -18,7 +18,11 @@
     <link rel="apple-touch-icon" sizes="144x144" href="/img/apple-touch-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="/img/apple-touch-icon-152x152.png">
 
+<<<<<<< HEAD
     <title>{{ $page_title or $app_name.' | Cachet' }}</title>
+=======
+    <title>{{ $page_title or $site_title }}</title>
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{{ elixir('dist/css/all.css') }}">

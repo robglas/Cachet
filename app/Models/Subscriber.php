@@ -27,7 +27,10 @@ class Subscriber extends Model implements HasPresenter
      * @var string[]
      */
     protected $casts = [
+<<<<<<< HEAD
         'id'          => 'int',
+=======
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         'email'       => 'string',
         'verify_code' => 'string',
         'verified_at' => 'date',
@@ -80,7 +83,11 @@ class Subscriber extends Model implements HasPresenter
      *
      * @return bool
      */
+<<<<<<< HEAD
     public function verified()
+=======
+    public function getIsVerifiedAttribute()
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
     {
         return $this->verified_at !== null;
     }

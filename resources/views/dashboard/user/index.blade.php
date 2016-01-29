@@ -14,6 +14,10 @@
             <div class="col-sm-12">
                 @include('dashboard.partials.errors')
                 <form name="UserForm" class="form-vertical" role="form" action="/dashboard/user" method="POST">
+<<<<<<< HEAD
+=======
+                    {!! csrf_field() !!}
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                     <fieldset>
                         <div class="row">
                             <div class="col-sm-1">

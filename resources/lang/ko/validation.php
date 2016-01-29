@@ -67,6 +67,10 @@ return [
     'regex'                => ':attribute 의 형식이 올바르지 않습니다.',
     'required'             => ':attribute 필드는 필수 항목입니다.',
     'required_if'          => ':attribute 필드는 :other 가 :value 일 때 필요합니다.',
+<<<<<<< HEAD
+=======
+    'required_unless'      => 'The :attribute field is required unless :other is in :values.',
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
     'required_with'        => ':attribute 는 :values 가 존재할 때 필요합니다.',
     'required_with_all'    => ':attribute 는 :values 가 존재할 때 필요합니다.',
     'required_without'     => ':attribute 는 :values 가 존재하지 않을 때 필요합니다.',

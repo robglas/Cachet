@@ -12,12 +12,19 @@
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
 use AltThree\Validator\ValidationException;
+<<<<<<< HEAD
 use CachetHQ\Cachet\Commands\Incident\ReportMaintenanceCommand;
+=======
+use CachetHQ\Cachet\Bus\Commands\Incident\ReportMaintenanceCommand;
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 use CachetHQ\Cachet\Dates\DateFactory;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
 use GrahamCampbell\Binput\Facades\Binput;
+<<<<<<< HEAD
 use Illuminate\Foundation\Bus\DispatchesJobs;
+=======
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
@@ -26,8 +33,11 @@ use Jenssegers\Date\Date;
 
 class ScheduleController extends Controller
 {
+<<<<<<< HEAD
     use DispatchesJobs;
 
+=======
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
     /**
      * Stores the sub-sidebar tree list.
      *
@@ -38,7 +48,11 @@ class ScheduleController extends Controller
     /**
      * Creates a new schedule controller instance.
      *
+<<<<<<< HEAD
      * @return \CachetHQ\Cachet\Http\Controllers\DashScheduleController
+=======
+     * @return void
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
      */
     public function __construct()
     {
@@ -97,7 +111,11 @@ class ScheduleController extends Controller
     public function addScheduleAction()
     {
         try {
+<<<<<<< HEAD
             $incident = $this->dispatch(new ReportMaintenanceCommand(
+=======
+            $incident = dispatch(new ReportMaintenanceCommand(
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                 Binput::get('incident.name'),
                 Binput::get('incident.message'),
                 Binput::get('incident.notify'),
@@ -134,17 +152,29 @@ class ScheduleController extends Controller
     /**
      * Updates the given incident.
      *
+<<<<<<< HEAD
      * @param \CachetHQ\Cachet\Models\Incident   $schedule
      * @param \CachetHQ\Cachet\Dates\DateFactory $dates
      *
      * @return \Illuminate\Http\RedirectResponse
      */
     public function editScheduleAction(Incident $schedule, DateFactory $dates)
+=======
+     * @param \CachetHQ\Cachet\Models\Incident $schedule
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function editScheduleAction(Incident $schedule)
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
     {
         $scheduleData = Binput::get('incident');
 
         // Parse the schedule date.
+<<<<<<< HEAD
         $scheduledAt = $dates->createNormalized('d/m/Y H:i', $scheduleData['scheduled_at']);
+=======
+        $scheduledAt = app(DateFactory::class)->createNormalized('d/m/Y H:i', $scheduleData['scheduled_at']);
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 
         if ($scheduledAt->isPast()) {
             $messageBag = new MessageBag();

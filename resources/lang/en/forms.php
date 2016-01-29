@@ -27,10 +27,18 @@ return [
 
     // Login form fields
     'login' => [
+<<<<<<< HEAD
         'email'         => 'Email',
         'password'      => 'Password',
         '2fauth'        => 'Authentication Code',
         'invalid'       => 'Invalid email or password',
+=======
+        'login'         => 'Username or Email',
+        'email'         => 'Email',
+        'password'      => 'Password',
+        '2fauth'        => 'Authentication Code',
+        'invalid'       => 'Invalid username or password',
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         'invalid-token' => 'Invalid token',
         'cookies'       => 'You must enable cookies to login.',
     ],
@@ -83,6 +91,10 @@ return [
         'type_sum'         => 'Sum',
         'type_avg'         => 'Average',
         'places'           => 'Decimal Places',
+<<<<<<< HEAD
+=======
+        'default_view'     => 'Default View',
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 
         'points' => [
             'value' => 'Value',

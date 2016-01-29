@@ -12,6 +12,7 @@
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
 use AltThree\Validator\ValidationException;
+<<<<<<< HEAD
 use CachetHQ\Cachet\Commands\Metric\AddMetricCommand;
 use CachetHQ\Cachet\Commands\Metric\RemoveMetricCommand;
 use CachetHQ\Cachet\Commands\Metric\UpdateMetricCommand;
@@ -19,14 +20,25 @@ use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Foundation\Bus\DispatchesJobs;
+=======
+use CachetHQ\Cachet\Bus\Commands\Metric\AddMetricCommand;
+use CachetHQ\Cachet\Bus\Commands\Metric\RemoveMetricCommand;
+use CachetHQ\Cachet\Bus\Commands\Metric\UpdateMetricCommand;
+use CachetHQ\Cachet\Models\Metric;
+use CachetHQ\Cachet\Models\MetricPoint;
+use GrahamCampbell\Binput\Facades\Binput;
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 
 class MetricController extends Controller
 {
+<<<<<<< HEAD
     use DispatchesJobs;
 
+=======
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
     /**
      * Shows the metrics view.
      *
@@ -71,8 +83,24 @@ class MetricController extends Controller
      */
     public function createMetricAction()
     {
+<<<<<<< HEAD
         try {
             $this->dispatchFromArray(AddMetricCommand::class, Binput::get('metric'));
+=======
+        $metricData = Binput::get('metric');
+
+        try {
+            dispatch(new AddMetricCommand(
+                $metricData['name'],
+                $metricData['suffix'],
+                $metricData['description'],
+                $metricData['default_value'],
+                $metricData['calc_type'],
+                $metricData['display_chart'],
+                $metricData['places'],
+                $metricData['default_view']
+            ));
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.metrics.add')
                 ->withInput(Binput::all())
@@ -104,7 +132,11 @@ class MetricController extends Controller
      */
     public function deleteMetricAction(Metric $metric)
     {
+<<<<<<< HEAD
         $this->dispatch(new RemoveMetricCommand($metric));
+=======
+        dispatch(new RemoveMetricCommand($metric));
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 
         return Redirect::route('dashboard.metrics.index')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.metrics.delete.success')));
@@ -134,6 +166,7 @@ class MetricController extends Controller
     public function editMetricAction(Metric $metric)
     {
         try {
+<<<<<<< HEAD
             $this->dispatch(new UpdateMetricCommand(
                 $metric,
                 Binput::get('metric.name', null, false),
@@ -143,6 +176,18 @@ class MetricController extends Controller
                 Binput::get('metric.calc_type', null, false),
                 Binput::get('metric.display_chart', null, false),
                 Binput::get('metric.places', null, false)
+=======
+            dispatch(new UpdateMetricCommand(
+                $metric,
+                Binput::get('name', null, false),
+                Binput::get('suffix', null, false),
+                Binput::get('description', null, false),
+                Binput::get('default_value', null, false),
+                Binput::get('calc_type', null, false),
+                Binput::get('display_chart', null, false),
+                Binput::get('places', null, false),
+                Binput::get('default_view', null, false)
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
             ));
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.metrics.edit', ['id' => $metric->id])

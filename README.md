@@ -10,7 +10,11 @@
 
 ## Features
 
+<<<<<<< HEAD
 - List your service components
+=======
+- List your services components
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 - Log incidents
 - Apply custom CSS to the status page
 - Markdown support for incident messages
@@ -50,7 +54,11 @@ You can now find our documentation at [https://docs.cachethq.io](https://docs.ca
 
 To test out the demo, you may login to the [Dashboard](https://demo.cachethq.io/dashboard) with the following:
 
+<<<<<<< HEAD
 - **Username:** test@test.com
+=======
+- **Username:** test or test@test.com
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 - **Password:** test123
 
 The demo is reset every half hour.

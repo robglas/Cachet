@@ -24,10 +24,19 @@ class SetupRoutes
      * Define the setup routes.
      *
      * @param \Illuminate\Contracts\Routing\Registrar $router
+<<<<<<< HEAD
      */
     public function map(Registrar $router)
     {
         $router->group(['middleware' => 'app.isSetup'], function ($router) {
+=======
+     *
+     * @return void
+     */
+    public function map(Registrar $router)
+    {
+        $router->group(['middleware' => ['web', 'setup']], function ($router) {
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
             $router->controller('setup', 'SetupController');
         });
     }

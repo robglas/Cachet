@@ -52,9 +52,16 @@ return [
     // Metrics
     'metrics' => [
         'filter' => [
+<<<<<<< HEAD
             'hourly'  => 'Laatste 12 uren',
             'weekly'  => 'Week',
             'monthly' => 'Maand',
+=======
+            'last_hour' => 'Last Hour',
+            'hourly'    => 'Laatste 12 uren',
+            'weekly'    => 'Week',
+            'monthly'   => 'Maand',
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         ],
     ],
 
@@ -63,6 +70,7 @@ return [
         'subscribe' => 'Abonneer voor de meest recente updates.',
         'button'    => 'Abonneer',
         'email'     => [
+<<<<<<< HEAD
             'subscribe'    => 'Abonneren op e-mail updates.',
             'subscribed'   => 'U bent geabonneerd op e-mailmeldingen, controleer uw e-mail om uw abonnement te bevestigen.',
             'verified'     => 'Uw e-mail abonnement is bevestigd. Bedankt!',
@@ -70,6 +78,16 @@ return [
             'unsubscribed' => 'Uw e-mail abonnement is opgezegd.',
             'failure'      => 'Er ging iets fout tijdens het aanmelden.',
             'verify'       => [
+=======
+            'subscribe'          => 'Abonneren op e-mail updates.',
+            'subscribed'         => 'U bent geabonneerd op e-mailmeldingen, controleer uw e-mail om uw abonnement te bevestigen.',
+            'verified'           => 'Uw e-mail abonnement is bevestigd. Bedankt!',
+            'unsubscribe'        => 'Afmelden voor e-mail updates.',
+            'unsubscribed'       => 'Uw e-mail abonnement is opgezegd.',
+            'failure'            => 'Er ging iets fout tijdens het aanmelden.',
+            'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
+            'verify'             => [
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                 'text'           => 'Bevestig uw e-mail abonnement op :app_name status updates.\\n:link\\nBedankt, :app_name',
                 'html-preheader' => 'Bevestig uw e-mail abonnement op :app_name status updates.',
                 'html'           => '',

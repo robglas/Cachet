@@ -38,7 +38,11 @@
                                     <div class="form-group">
                                         <label>{{ trans('forms.settings.app-setup.about-this-page') }}</label>
                                         <div class='markdown-control'>
+<<<<<<< HEAD
                                             <textarea name="app_about" class="form-control autosize" rows="4">{{ $about_app }}</textarea>
+=======
+                                            <textarea name="app_about" class="form-control autosize" rows="4">{{ $raw_app_about }}</textarea>
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                                         </div>
                                     </div>
                                 </div>

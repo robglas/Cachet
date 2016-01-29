@@ -23,6 +23,13 @@ return [
     |
     */
 
+<<<<<<< HEAD
+=======
+   'github' => [
+        'token' => env('GITHUB_TOKEN'),
+    ],
+
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
         'secret' => env('MAILGUN_SECRET'),

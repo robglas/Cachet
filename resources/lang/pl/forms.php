@@ -25,6 +25,10 @@ return [
 
     // Login form fields
     'login' => [
+<<<<<<< HEAD
+=======
+        'login'         => 'Username or Email',
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         'email'         => 'Email',
         'password'      => 'Hasło',
         '2fauth'        => 'Kod autentykacji',

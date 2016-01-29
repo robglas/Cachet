@@ -52,9 +52,16 @@ return [
     // Metrics
     'metrics' => [
         'filter' => [
+<<<<<<< HEAD
             'hourly'  => 'Last 12 Hours',
             'weekly'  => 'Week',
             'monthly' => 'Month',
+=======
+            'last_hour' => 'Last Hour',
+            'hourly'    => 'Last 12 Hours',
+            'weekly'    => 'Week',
+            'monthly'   => 'Month',
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         ],
     ],
 
@@ -63,6 +70,7 @@ return [
         'subscribe' => 'Ikuti newsletter untuk mendapat update terbaru.',
         'button'    => 'Daftar',
         'email'     => [
+<<<<<<< HEAD
             'subscribe'    => 'Langganan update email.',
             'subscribed'   => 'Anda berhasil terdaftar pada notifikasi email, mohon periksa email anda untuk mengkonfirmasi pendaftaran ini.',
             'verified'     => 'Pendaftaran newsletter anda berhasil dikonfirmasi. Terima kasih!',
@@ -72,6 +80,17 @@ return [
             'verify'       => [
                 'text'           => 'Mohon konfirmasi langganan email update status :app_name.\\n:link\\nTerima kasih,
 :app_name',
+=======
+            'subscribe'          => 'Langganan update email.',
+            'subscribed'         => 'Anda berhasil terdaftar pada notifikasi email, mohon periksa email anda untuk mengkonfirmasi pendaftaran ini.',
+            'verified'           => 'Pendaftaran newsletter anda berhasil dikonfirmasi. Terima kasih!',
+            'unsubscribe'        => 'Hapus saya dari update email.',
+            'unsubscribed'       => 'Langganan email anda sudah dihentikan.',
+            'failure'            => 'Ada yang salah dengan sistem langganan email.',
+            'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
+            'verify'             => [
+                'text'           => 'Mohon konfirmasi langganan email update status :app_name.\\n:link\\nTerima kasih.',
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                 'html-preheader' => 'Mohon konfirmasi langganan email update status :app_name.',
                 'html'           => '',
             ],

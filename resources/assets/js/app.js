@@ -252,8 +252,13 @@ $(function() {
                 url: '/dashboard/api/incidents/templates',
                 success: function(tpl) {
                     var $form = $('form[role=form]');
+<<<<<<< HEAD
                     $form.find('input[name=incident\\[name\\]]').val(tpl.name);
                     $form.find('textarea[name=incident\\[message\\]]').val(tpl.template);
+=======
+                    $form.find('input[name=name]').val(tpl.name);
+                    $form.find('textarea[name=message]').val(tpl.template);
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                 },
                 error: function() {
                     (new Cachet.Notifier()).notify('There was an error finding that template.');
@@ -363,6 +368,22 @@ $(function() {
 
     // Password strength
     $('.password-strength').strengthify();
+<<<<<<< HEAD
+=======
+
+    // Check for updates.
+    if ($('#update-alert').length > 0) {
+        $.ajax({
+            async: true,
+            dataType: 'json',
+            url: '/dashboard/api/system/version',
+        }).done(function (result) {
+            if (result.is_latest == false) {
+                $('#update-alert').removeClass('hidden');
+            }
+        });
+    }
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 });
 
 function askConfirmation(callback) {

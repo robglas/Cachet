@@ -22,7 +22,11 @@
                                     <div class="form-group">
                                         <label>{{ trans('forms.settings.localization.site-timezone') }}</label>
                                         <select name="app_timezone" class="form-control" required>
+<<<<<<< HEAD
                                             <option value="">Select Timezone</option>
+=======
+                                            <option disabled>Select Timezone</option>
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                                             @foreach($timezones as $region => $list)
                                                 <optgroup label="{{ $region }}">
                                                     @foreach($list as $timezone => $name)

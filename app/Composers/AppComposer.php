@@ -27,9 +27,16 @@ class AppComposer
      */
     public function compose(View $view)
     {
+<<<<<<< HEAD
         $view->withAboutApp(Markdown::convertToHtml(Setting::get('app_about')));
         $view->withAppAnalytics(Setting::get('app_analytics'));
         $view->withAppAnalyticsGoSquared(Setting::get('app_analytics_gs'));
+=======
+        $support = Setting::get('show_support');
+        $view->withAboutApp(Markdown::convertToHtml(Setting::get('app_about')));
+        $view->withAppAnalytics(Setting::get('app_analytics'));
+        $view->withAppAnalyticsGoSquared(Setting::get('app_analytics_go_squared'));
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         $view->withAppAnalyticsPiwikUrl(Setting::get('app_analytics_piwik_url'));
         $view->withAppAnalyticsPiwikSiteId(Setting::get('app_analytics_piwik_siteid'));
         $view->withAppBanner(Setting::get('app_banner'));
@@ -39,8 +46,19 @@ class AppComposer
         $view->withAppGraphs(Setting::get('display_graphs'));
         $view->withAppLocale(Setting::get('app_locale'));
         $view->withAppName(Setting::get('app_name'));
+<<<<<<< HEAD
         $view->withAppStylesheet(Setting::get('stylesheet'));
         $view->withAppUrl(Config::get('app.url'));
         $view->withShowSupport(Setting::get('show_support'));
+=======
+        if ($support) {
+            $view->withSiteTitle(Setting::get('app_name').' | Cachet');
+        } else {
+            $view->withSiteTitle(Setting::get('app_name'));
+        }
+        $view->withAppStylesheet(Setting::get('stylesheet'));
+        $view->withAppUrl(Config::get('app.url'));
+        $view->withShowSupport($support);
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
     }
 }

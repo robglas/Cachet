@@ -11,20 +11,32 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Api;
 
+<<<<<<< HEAD
 use CachetHQ\Cachet\Commands\Metric\AddMetricPointCommand;
 use CachetHQ\Cachet\Commands\Metric\RemoveMetricPointCommand;
 use CachetHQ\Cachet\Commands\Metric\UpdateMetricPointCommand;
+=======
+use CachetHQ\Cachet\Bus\Commands\Metric\AddMetricPointCommand;
+use CachetHQ\Cachet\Bus\Commands\Metric\RemoveMetricPointCommand;
+use CachetHQ\Cachet\Bus\Commands\Metric\UpdateMetricPointCommand;
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 use CachetHQ\Cachet\Models\Metric;
 use CachetHQ\Cachet\Models\MetricPoint;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Database\QueryException;
+<<<<<<< HEAD
 use Illuminate\Foundation\Bus\DispatchesJobs;
+=======
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class MetricPointController extends AbstractApiController
 {
+<<<<<<< HEAD
     use DispatchesJobs;
 
+=======
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
     /**
      * Get a single metric point.
      *
@@ -48,7 +60,11 @@ class MetricPointController extends AbstractApiController
     public function postMetricPoints(Metric $metric)
     {
         try {
+<<<<<<< HEAD
             $metricPoint = $this->dispatch(new AddMetricPointCommand(
+=======
+            $metricPoint = dispatch(new AddMetricPointCommand(
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                 $metric,
                 Binput::get('value'),
                 Binput::get('timestamp'))
@@ -70,7 +86,11 @@ class MetricPointController extends AbstractApiController
      */
     public function putMetricPoint(Metric $metric, MetricPoint $metricPoint)
     {
+<<<<<<< HEAD
         $metricPoint = $this->dispatch(new UpdateMetricPointCommand(
+=======
+        $metricPoint = dispatch(new UpdateMetricPointCommand(
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
             $metricPoint,
             $metric,
             Binput::get('value'),
@@ -90,7 +110,11 @@ class MetricPointController extends AbstractApiController
      */
     public function deleteMetricPoint(Metric $metric, MetricPoint $metricPoint)
     {
+<<<<<<< HEAD
         $this->dispatch(new RemoveMetricPointCommand($metricPoint));
+=======
+        dispatch(new RemoveMetricPointCommand($metricPoint));
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 
         return $this->noContent();
     }

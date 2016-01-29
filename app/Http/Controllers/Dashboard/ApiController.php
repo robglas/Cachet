@@ -11,6 +11,10 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
+<<<<<<< HEAD
+=======
+use CachetHQ\Cachet\GitHub\Release;
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\IncidentTemplate;
@@ -18,6 +22,10 @@ use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Routing\Controller;
+<<<<<<< HEAD
+=======
+use Illuminate\Support\Facades\Response;
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 
 class ApiController extends Controller
 {
@@ -89,4 +97,23 @@ class ApiController extends Controller
 
         throw new ModelNotFoundException("Incident template for $templateSlug could not be found.");
     }
+<<<<<<< HEAD
+=======
+
+    /**
+     * Checks if Cachet is up to date.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function checkVersion()
+    {
+        $latest = app(Release::class)->latest();
+
+        return Response::json([
+            'cachet_version' => CACHET_VERSION,
+            'latest_version' => $latest,
+            'is_latest'      => version_compare(CACHET_VERSION, $latest) === 1,
+        ]);
+    }
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 }

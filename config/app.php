@@ -13,6 +13,22 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+<<<<<<< HEAD
+=======
+    | Application Environment
+    |--------------------------------------------------------------------------
+    |
+    | This value determines the "environment" your application is currently
+    | running in. This may determine how you prefer to configure various
+    | services your application utilizes. Set this in your ".env" file.
+    |
+    */
+
+    'env' => env('APP_ENV', 'production'),
+
+    /*
+    |--------------------------------------------------------------------------
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
     | Application Debug Mode
     |--------------------------------------------------------------------------
     |
@@ -87,7 +103,11 @@ return [
     |
     */
 
+<<<<<<< HEAD
     'key' => env('APP_KEY', 'SomeRandomString'),
+=======
+    'key' => env('APP_KEY'),
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 
     'cipher' => 'AES-256-CBC',
 
@@ -104,7 +124,11 @@ return [
     |
     */
 
+<<<<<<< HEAD
     'log' => env('LOGGING_MODE', 'daily'),
+=======
+    'log' => env('APP_LOG', 'daily'),
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 
     /*
     |--------------------------------------------------------------------------
@@ -122,6 +146,7 @@ return [
         /*
          * Laravel Framework Service Providers...
          */
+<<<<<<< HEAD
         'Illuminate\Foundation\Providers\ArtisanServiceProvider',
         'Illuminate\Auth\AuthServiceProvider',
         'Illuminate\Broadcasting\BroadcastServiceProvider',
@@ -129,6 +154,13 @@ return [
         'Illuminate\Cache\CacheServiceProvider',
         'Illuminate\Foundation\Providers\ConsoleSupportServiceProvider',
         'Illuminate\Routing\ControllerServiceProvider',
+=======
+        'Illuminate\Auth\AuthServiceProvider',
+        'Illuminate\Broadcasting\BroadcastServiceProvider',
+        'AltThree\Bus\BusServiceProvider',
+        'Illuminate\Cache\CacheServiceProvider',
+        'Illuminate\Foundation\Providers\ConsoleSupportServiceProvider',
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         'Illuminate\Cookie\CookieServiceProvider',
         'Illuminate\Database\DatabaseServiceProvider',
         'Illuminate\Encryption\EncryptionServiceProvider',
@@ -149,7 +181,11 @@ return [
         /*
          * Packages Service Providers...
          */
+<<<<<<< HEAD
         env('CACHET_EMOJI', false) ? 'AltThree\Emoji\EmojiServiceProvider' : null,
+=======
+        'AltThree\Emoji\EmojiServiceProvider',
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         'Barryvdh\Cors\ServiceProvider',
         'Fideloper\Proxy\TrustedProxyServiceProvider',
         'GrahamCampbell\Binput\BinputServiceProvider',
@@ -167,12 +203,22 @@ return [
         /*
          * Application Service Providers...
          */
+<<<<<<< HEAD
         'CachetHQ\Cachet\Providers\AppServiceProvider',
         'CachetHQ\Cachet\Providers\ComposerServiceProvider',
         'CachetHQ\Cachet\Providers\ConfigServiceProvider',
         'CachetHQ\Cachet\Providers\EventServiceProvider',
         'CachetHQ\Cachet\Providers\RepositoryServiceProvider',
         'CachetHQ\Cachet\Providers\RouteServiceProvider',
+=======
+        'CachetHQ\Cachet\Foundation\Providers\AppServiceProvider',
+        'CachetHQ\Cachet\Foundation\Providers\ComposerServiceProvider',
+        'CachetHQ\Cachet\Foundation\Providers\ConfigServiceProvider',
+        'CachetHQ\Cachet\Foundation\Providers\EventServiceProvider',
+        'CachetHQ\Cachet\Foundation\Providers\GitHubServiceProvider',
+        'CachetHQ\Cachet\Foundation\Providers\RepositoryServiceProvider',
+        'CachetHQ\Cachet\Foundation\Providers\RouteServiceProvider',
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 
     ]),
 
@@ -193,19 +239,28 @@ return [
         'Artisan'   => 'Illuminate\Support\Facades\Artisan',
         'Auth'      => 'Illuminate\Support\Facades\Auth',
         'Blade'     => 'Illuminate\Support\Facades\Blade',
+<<<<<<< HEAD
         'Bus'       => 'Illuminate\Support\Facades\Bus',
+=======
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         'Cache'     => 'Illuminate\Support\Facades\Cache',
         'Config'    => 'Illuminate\Support\Facades\Config',
         'Cookie'    => 'Illuminate\Support\Facades\Cookie',
         'Crypt'     => 'Illuminate\Support\Facades\Crypt',
         'DB'        => 'Illuminate\Support\Facades\DB',
+<<<<<<< HEAD
         'Eloquent'  => 'Illuminate\Database\Eloquent\Model',
+=======
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         'Event'     => 'Illuminate\Support\Facades\Event',
         'File'      => 'Illuminate\Support\Facades\File',
         'Gate'      => 'Illuminate\Support\Facades\Gate',
         'Hash'      => 'Illuminate\Support\Facades\Hash',
+<<<<<<< HEAD
         'Input'     => 'Illuminate\Support\Facades\Input',
         'Inspiring' => 'Illuminate\Foundation\Inspiring',
+=======
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         'Lang'      => 'Illuminate\Support\Facades\Lang',
         'Log'       => 'Illuminate\Support\Facades\Log',
         'Mail'      => 'Illuminate\Support\Facades\Mail',
@@ -223,6 +278,10 @@ return [
         'Validator' => 'Illuminate\Support\Facades\Validator',
         'View'      => 'Illuminate\Support\Facades\View',
 
+<<<<<<< HEAD
+=======
+        'Binput'    => 'GrahamCampbell\Binput\Facades\Binput',
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         'Setting'   => 'CachetHQ\Cachet\Facades\Setting',
         'Str'       => 'Illuminate\Support\Str',
 

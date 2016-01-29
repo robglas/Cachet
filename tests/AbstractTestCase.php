@@ -11,10 +11,21 @@
 
 namespace CachetHQ\Tests\Cachet;
 
+<<<<<<< HEAD
 use CachetHQ\Cachet\Models\User;
 use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Foundation\Testing\TestCase;
 
+=======
+use Illuminate\Contracts\Console\Kernel;
+use Illuminate\Foundation\Testing\TestCase;
+
+/**
+ * This is the abstract test case class.
+ *
+ * @author Graham Campbell <graham@alt-three.com>
+ */
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 abstract class AbstractTestCase extends TestCase
 {
     /**
@@ -37,6 +48,7 @@ abstract class AbstractTestCase extends TestCase
 
         return $app;
     }
+<<<<<<< HEAD
 
     /**
      * Become a user.
@@ -47,4 +59,6 @@ abstract class AbstractTestCase extends TestCase
 
         $this->be($this->user);
     }
+=======
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 }

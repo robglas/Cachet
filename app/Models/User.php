@@ -25,12 +25,32 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     use Authenticatable, CanResetPassword, ValidatingTrait;
 
     /**
+<<<<<<< HEAD
+=======
+     * The admin level of user.
+     *
+     * @var int
+     */
+    const LEVEL_ADMIN = 1;
+
+    /**
+     * The general level of user.
+     *
+     * @var int
+     */
+    const LEVEL_USER = 2;
+
+    /**
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
      * The attributes that should be casted to native types.
      *
      * @var string[]
      */
     protected $casts = [
+<<<<<<< HEAD
         'id'                => 'int',
+=======
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         'username'          => 'string',
         'email'             => 'string',
         'google_2fa_secret' => 'string',
@@ -144,7 +164,11 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     public function getIsAdminAttribute()
     {
+<<<<<<< HEAD
         return $this->level == 1;
+=======
+        return $this->level == self::LEVEL_ADMIN;
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
     }
 
     /**

@@ -29,6 +29,23 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+<<<<<<< HEAD
+=======
+    | CommonMark Extenstions
+    |--------------------------------------------------------------------------
+    |
+    | This option specifies what extensions will be automatically enabled.
+    | Simply provide your extension class names here.
+    |
+    | Default: []
+    |
+    */
+
+    'extensions' => env('CACHET_EMOJI', false) ? ['AltThree\Emoji\EmojiExtension'] : [],
+
+    /*
+    |--------------------------------------------------------------------------
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
     | Renderer Configuration
     |--------------------------------------------------------------------------
     |
@@ -105,7 +122,12 @@ return [
     | Safe Mode
     |--------------------------------------------------------------------------
     |
+<<<<<<< HEAD
     | This option specifies if raw HTML should be allowed in the document.
+=======
+    | This option specifies if raw HTML is rendered in the document. Setting
+    | this to true will not render HTML, and false will.
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
     |
     | Default: false
     |

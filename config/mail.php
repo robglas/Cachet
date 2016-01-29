@@ -117,6 +117,7 @@ return [
 
     'sendmail' => '/usr/sbin/sendmail -bs',
 
+<<<<<<< HEAD
     /*
     |--------------------------------------------------------------------------
     | Mail "Pretend"
@@ -130,4 +131,6 @@ return [
 
     'pretend' => false,
 
+=======
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 ];

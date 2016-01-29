@@ -24,6 +24,7 @@ class ApiRoutes
      * Define the api routes.
      *
      * @param \Illuminate\Contracts\Routing\Registrar $router
+<<<<<<< HEAD
      */
     public function map(Registrar $router)
     {
@@ -52,6 +53,31 @@ class ApiRoutes
 
             // Authorization Required
             $router->group(['middleware' => 'auth.api'], function ($router) {
+=======
+     *
+     * @return void
+     */
+    public function map(Registrar $router)
+    {
+        $router->group(['namespace' => 'Api', 'prefix' => 'api/v1', 'middleware' => ['api']], function ($router) {
+            $router->group(['middleware' => ['auth.api']], function ($router) {
+                $router->get('ping', 'GeneralController@ping');
+
+                $router->get('components', 'ComponentController@getComponents');
+                $router->get('components/groups', 'ComponentGroupController@getGroups');
+                $router->get('components/groups/{component_group}', 'ComponentGroupController@getGroup');
+                $router->get('components/{component}', 'ComponentController@getComponent');
+
+                $router->get('incidents', 'IncidentController@getIncidents');
+                $router->get('incidents/{incident}', 'IncidentController@getIncident');
+
+                $router->get('metrics', 'MetricController@getMetrics');
+                $router->get('metrics/{metric}', 'MetricController@getMetric');
+                $router->get('metrics/{metric}/points', 'MetricController@getMetricPoints');
+            });
+
+            $router->group(['middleware' => ['auth.api:true']], function ($router) {
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                 $router->get('subscribers', 'SubscriberController@getSubscribers');
 
                 $router->post('components', 'ComponentController@postComponents');

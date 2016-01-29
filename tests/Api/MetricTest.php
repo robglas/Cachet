@@ -11,6 +11,7 @@
 
 namespace CachetHQ\Tests\Cachet\Api;
 
+<<<<<<< HEAD
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
@@ -18,6 +19,16 @@ class MetricTest extends AbstractTestCase
 {
     use DatabaseMigrations;
 
+=======
+/**
+ * This is the metric test class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
+ */
+class MetricTest extends AbstractApiTestCase
+{
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
     public function testGetMetrics()
     {
         $metrics = factory('CachetHQ\Cachet\Models\Metric', 3)->create();
@@ -60,6 +71,10 @@ class MetricTest extends AbstractTestCase
             'default_value' => 1,
             'display_chart' => 1,
             'places'        => 0,
+<<<<<<< HEAD
+=======
+            'view'          => 0,
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         ]);
         $this->seeJson(['name' => 'Foo']);
         $this->assertResponseOk();
@@ -81,8 +96,14 @@ class MetricTest extends AbstractTestCase
 
         $this->put('/api/v1/metrics/1', [
             'name' => 'Foo',
+<<<<<<< HEAD
         ]);
         $this->seeJson(['name' => 'Foo']);
+=======
+            'view' => 2,
+        ]);
+        $this->seeJson(['name' => 'Foo', 'default_view' => 2]);
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         $this->assertResponseOk();
     }
 

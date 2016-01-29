@@ -24,6 +24,7 @@ class FeedRoutes
      * Define the status page routes.
      *
      * @param \Illuminate\Contracts\Routing\Registrar $router
+<<<<<<< HEAD
      */
     public function map(Registrar $router)
     {
@@ -39,6 +40,21 @@ class FeedRoutes
             $router->get('/rss/{component_group?}', [
                 'as'   => 'feed.rss',
                 'uses' => 'RssController@feedAction',
+=======
+     *
+     * @return void
+     */
+    public function map(Registrar $router)
+    {
+        $router->group(['middleware' => ['web', 'ready']], function ($router) {
+            $router->get('/atom/{component_group?}', [
+                'as'   => 'feed.atom',
+                'uses' => 'FeedController@atomAction',
+            ]);
+            $router->get('/rss/{component_group?}', [
+                'as'   => 'feed.rss',
+                'uses' => 'FeedController@rssAction',
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
             ]);
         });
     }

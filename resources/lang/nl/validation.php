@@ -67,6 +67,10 @@ return [
     'regex'                => ':attribute formaat is ongeldig.',
     'required'             => ':attribute formaat is verplicht.',
     'required_if'          => ':attribute veld is verplicht wanneer :other gelijk is aan :value.',
+<<<<<<< HEAD
+=======
+    'required_unless'      => 'The :attribute field is required unless :other is in :values.',
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
     'required_with'        => ':attribute veld is verplicht wanneer :values aanwezig is.',
     'required_with_all'    => ':attribute veld is verplicht wanneer :values aanwezig zijn.',
     'required_without'     => ':attribute veld is verplicht wanner :values niet aanwezig is.',

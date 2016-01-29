@@ -98,7 +98,11 @@ class IncidentPresenter extends AbstractPresenter
     }
 
     /**
+<<<<<<< HEAD
      * Present formated date time.
+=======
+     * Present formatted date time.
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
      *
      * @return string
      */
@@ -181,6 +185,19 @@ class IncidentPresenter extends AbstractPresenter
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Returns a human readable version of the status.
+     *
+     * @return string
+     */
+    public function human_status()
+    {
+        return trans('cachet.incidents.status.'.$this->wrappedObject->status);
+    }
+
+    /**
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
      * Convert the presenter instance to an array.
      *
      * @return string[]
@@ -188,6 +205,10 @@ class IncidentPresenter extends AbstractPresenter
     public function toArray()
     {
         return array_merge($this->wrappedObject->toArray(), [
+<<<<<<< HEAD
+=======
+            'human_status' => $this->human_status(),
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
             'scheduled_at' => $this->scheduled_at(),
             'created_at'   => $this->created_at(),
             'updated_at'   => $this->updated_at(),

@@ -35,7 +35,14 @@
                     </fieldset>
 
                     <div class="form-group">
+<<<<<<< HEAD
                         <button type="submit" class="btn btn-success">{{ trans('forms.invite') }}</button>
+=======
+                        <div class='btn-group'>
+                            <button type="submit" class="btn btn-success">{{ trans('forms.invite') }}</button>
+                            <a class="btn btn-default" href="{{ route('dashboard.team.index') }}">{{ trans('forms.cancel') }}</a>
+                        </div>
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                     </div>
                 </form>
             </div>

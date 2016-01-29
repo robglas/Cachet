@@ -67,6 +67,10 @@ return [
     'regex'                => ':attribute 格式無效。',
     'required'             => ':attribute 字段必填。',
     'required_if'          => ':attribute 項在 :other 是 :value 時是必須填寫的。',
+<<<<<<< HEAD
+=======
+    'required_unless'      => 'The :attribute field is required unless :other is in :values.',
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
     'required_with'        => '當含有 :values 時， :attribute 是必需的。',
     'required_with_all'    => '當含有 :values 時， :attribute 是必需的。',
     'required_without'     => '當 :values 不存在時， :attribute 是必需的。',

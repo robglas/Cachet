@@ -12,25 +12,40 @@
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
 use AltThree\Validator\ValidationException;
+<<<<<<< HEAD
 use CachetHQ\Cachet\Commands\Component\AddComponentCommand;
 use CachetHQ\Cachet\Commands\Component\RemoveComponentCommand;
 use CachetHQ\Cachet\Commands\Component\UpdateComponentCommand;
 use CachetHQ\Cachet\Commands\ComponentGroup\AddComponentGroupCommand;
 use CachetHQ\Cachet\Commands\ComponentGroup\RemoveComponentGroupCommand;
 use CachetHQ\Cachet\Commands\ComponentGroup\UpdateComponentGroupCommand;
+=======
+use CachetHQ\Cachet\Bus\Commands\Component\AddComponentCommand;
+use CachetHQ\Cachet\Bus\Commands\Component\RemoveComponentCommand;
+use CachetHQ\Cachet\Bus\Commands\Component\UpdateComponentCommand;
+use CachetHQ\Cachet\Bus\Commands\ComponentGroup\AddComponentGroupCommand;
+use CachetHQ\Cachet\Bus\Commands\ComponentGroup\RemoveComponentGroupCommand;
+use CachetHQ\Cachet\Bus\Commands\ComponentGroup\UpdateComponentGroupCommand;
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Tag;
 use GrahamCampbell\Binput\Facades\Binput;
+<<<<<<< HEAD
 use Illuminate\Foundation\Bus\DispatchesJobs;
+=======
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 
 class ComponentController extends Controller
 {
+<<<<<<< HEAD
     use DispatchesJobs;
 
+=======
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
     /**
      * Array of sub-menu items.
      *
@@ -130,8 +145,21 @@ class ComponentController extends Controller
         $tags = array_pull($componentData, 'tags');
 
         try {
+<<<<<<< HEAD
             $componentData['component'] = $component;
             $component = $this->dispatchFromArray(UpdateComponentCommand::class, $componentData);
+=======
+            $component = dispatch(new UpdateComponentCommand(
+                $component,
+                $componentData['name'],
+                $componentData['description'],
+                $componentData['status'],
+                $componentData['link'],
+                $componentData['order'],
+                $componentData['group_id'],
+                $componentData['enabled']
+            ));
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.components.edit', ['id' => $component->id])
                 ->withInput(Binput::all())
@@ -176,7 +204,19 @@ class ComponentController extends Controller
         $tags = array_pull($componentData, 'tags');
 
         try {
+<<<<<<< HEAD
             $component = $this->dispatchFromArray(AddComponentCommand::class, $componentData);
+=======
+            $component = dispatch(new AddComponentCommand(
+                $componentData['name'],
+                $componentData['description'],
+                $componentData['status'],
+                $componentData['link'],
+                $componentData['order'],
+                $componentData['group_id'],
+                $componentData['enabled']
+            ));
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         } catch (ValidationException $e) {
             return Redirect::route('dashboard.components.add')
                 ->withInput(Binput::all())
@@ -207,7 +247,11 @@ class ComponentController extends Controller
      */
     public function deleteComponentAction(Component $component)
     {
+<<<<<<< HEAD
         $this->dispatch(new RemoveComponentCommand($component));
+=======
+        dispatch(new RemoveComponentCommand($component));
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 
         return Redirect::route('dashboard.components.index')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.components.delete.success')));
@@ -222,7 +266,11 @@ class ComponentController extends Controller
      */
     public function deleteComponentGroupAction(ComponentGroup $group)
     {
+<<<<<<< HEAD
         $this->dispatch(new RemoveComponentGroupCommand($group));
+=======
+        dispatch(new RemoveComponentGroupCommand($group));
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 
         return Redirect::route('dashboard.components.index')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.components.delete.success')));
@@ -261,7 +309,11 @@ class ComponentController extends Controller
     public function postAddComponentGroup()
     {
         try {
+<<<<<<< HEAD
             $group = $this->dispatch(new AddComponentGroupCommand(
+=======
+            $group = dispatch(new AddComponentGroupCommand(
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                 Binput::get('name'),
                 Binput::get('order', 0)
             ));
@@ -286,7 +338,11 @@ class ComponentController extends Controller
     public function updateComponentGroupAction(ComponentGroup $group)
     {
         try {
+<<<<<<< HEAD
             $group = $this->dispatch(new UpdateComponentGroupCommand(
+=======
+            $group = dispatch(new UpdateComponentGroupCommand(
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                 $group,
                 Binput::get('name'),
                 Binput::get('order', 0)

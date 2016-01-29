@@ -20,7 +20,10 @@ class Timezone
      *
      * @param \Illuminate\Http\Request $request
      * @param \Closure                 $next
+<<<<<<< HEAD
      * @param string                   $type
+=======
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
      *
      * @return mixed
      */

@@ -7,17 +7,43 @@
         background-color: $cachet_green;
         border: solid 2px $cachet_dark-green;
         color: white;
+<<<<<<< HEAD
+=======
+
+        a {
+            color: white;
+            font-weight: bold;
+        }
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
     }
 
     &.alert-info {
         background: $cachet_blue;
         border: solid 2px $cachet_dark-blue;
+<<<<<<< HEAD
         color: #FFF;
+=======
+        color: white;
+
+        a {
+            color: white;
+            font-weight: bold;
+        }
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
     }
 
     &.alert-danger {
         background: $cachet_red;
         border: solid 2px $cachet_dark-red;
+<<<<<<< HEAD
         color: #FFF;
+=======
+        color: white;
+
+        a {
+            color: white;
+            font-weight: bold;
+        }
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
     }
 }

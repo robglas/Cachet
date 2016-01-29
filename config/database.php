@@ -67,6 +67,10 @@ return [
             'database'  => env('DB_DATABASE', null),
             'username'  => env('DB_USERNAME', null),
             'password'  => env('DB_PASSWORD', null),
+<<<<<<< HEAD
+=======
+            'port'      => env('DB_PORT', null),
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
@@ -74,6 +78,7 @@ return [
         ],
 
         'pgsql' => [
+<<<<<<< HEAD
             'driver'   => 'pgsql',
             'host'     => env('DB_HOST', null),
             'database' => env('DB_DATABASE', null),
@@ -91,6 +96,27 @@ return [
             'username' => env('DB_USERNAME', null),
             'password' => env('DB_PASSWORD', null),
             'prefix'   => '',
+=======
+            'driver'    => 'pgsql',
+            'host'      => env('DB_HOST', null),
+            'database'  => env('DB_DATABASE', null),
+            'username'  => env('DB_USERNAME', null),
+            'password'  => env('DB_PASSWORD', null),
+            'port'      => env('DB_PORT', null),
+            'charset'   => 'utf8',
+            'prefix'    => '',
+            'schema'    => 'public',
+        ],
+
+        'sqlsrv' => [
+            'driver'    => 'sqlsrv',
+            'host'      => env('DB_HOST', null),
+            'database'  => env('DB_DATABASE', null),
+            'username'  => env('DB_USERNAME', null),
+            'password'  => env('DB_PASSWORD', null),
+            'port'      => env('DB_PORT', null),
+            'prefix'    => '',
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         ],
 
     ],

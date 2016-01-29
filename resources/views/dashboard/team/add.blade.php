@@ -18,11 +18,19 @@
                     <fieldset>
                         <div class="form-group">
                             <label>{{ trans('forms.user.username') }}</label>
+<<<<<<< HEAD
                             <input type="text" class="form-control" name="username" value="{{ Input::old('username') }}" required>
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.user.email') }}</label>
                             <input type="email" class="form-control" name="email" value="{{ Input::old('email') }}" required>
+=======
+                            <input type="text" class="form-control" name="username" value="{{ Binput::old('username') }}" required>
+                        </div>
+                        <div class="form-group">
+                            <label>{{ trans('forms.user.email') }}</label>
+                            <input type="email" class="form-control" name="email" value="{{ Binput::old('email') }}" required>
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                         </div>
                         <div class="form-group">
                             <label>{{ trans('forms.user.password') }}</label>
@@ -41,7 +49,14 @@
                     </fieldset>
 
                     <div class="form-group">
+<<<<<<< HEAD
                         <button type="submit" class="btn btn-success">{{ trans('forms.add') }}</button>
+=======
+                        <div class='btn-group'>
+                            <button type="submit" class="btn btn-success">{{ trans('forms.add') }}</button>
+                            <a class="btn btn-default" href="{{ route('dashboard.team.index') }}">{{ trans('forms.cancel') }}</a>
+                        </div>
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                     </div>
                 </form>
             </div>

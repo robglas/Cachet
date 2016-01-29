@@ -20,6 +20,7 @@
     ],
     "require": {
         "php": ">=5.5.9",
+<<<<<<< HEAD
         "laravel/framework": "~5.1.26",
         "alt-three/emoji": "^2.1",
         "alt-three/validator": "^1.4",
@@ -44,6 +45,37 @@
         "graham-campbell/testbench-core": "^1.1",
         "mockery/mockery": "0.9.4",
         "phpunit/phpunit": "4.8.19"
+=======
+        "laravel/framework": "~5.2.11",
+        "alt-three/bus": "^1.0",
+        "alt-three/emoji": "^3.0",
+        "alt-three/validator": "^1.4",
+        "asm89/stack-cors": "dev-master as 0.2.2",
+        "barryvdh/laravel-cors": "^0.7.3",
+        "doctrine/dbal": "^2.5",
+        "fideloper/proxy": "^3.1",
+        "graham-campbell/binput": "^3.3",
+        "graham-campbell/core": "^4.2",
+        "graham-campbell/markdown": "^6.0",
+        "graham-campbell/throttle": "^5.1",
+        "graham-campbell/exceptions": "^8.3",
+        "guzzlehttp/guzzle": "^6.1",
+        "jenssegers/date": "^3.1",
+        "mccool/laravel-auto-presenter": "^4.2",
+        "pragmarx/google2fa": "^0.7.1",
+        "rcrowe/twigbridge": "^0.9.1",
+        "roumen/feed": "^2.9.9"
+    },
+    "require-dev": {
+        "alt-three/testbench": "^1.1",
+        "filp/whoops": "^2.0",
+        "fzaninotto/faker": "^1.5",
+        "graham-campbell/testbench-core": "^1.1",
+        "mockery/mockery": "0.9.4",
+        "phpunit/phpunit": "4.8.21",
+        "symfony/css-selector": "^3.0",
+        "symfony/dom-crawler": "^3.0"
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
     },
     "autoload": {
         "classmap": [
@@ -62,23 +94,40 @@
         }
     },
     "scripts": {
+<<<<<<< HEAD
         "pre-install-cmd": [
             "rm -f compiled.php config.php routes.php services.json"
         ],
         "post-install-cmd": [
+=======
+        "post-root-package-install": [
+            "php -r \"copy('.env.example', '.env');\"",
+            "php artisan key:generate"
+        ],
+        "post-create-project-cmd": [
+            "php artisan key:generate"
+        ],
+        "post-install-cmd": [
+            "php artisan clear-compiled",
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
             "php artisan optimize --force",
             "php artisan config:cache",
             "php artisan route:cache",
             "chmod -R 755 storage"
         ],
         "pre-update-cmd": [
+<<<<<<< HEAD
             "rm -f compiled.php config.php routes.php services.json"
+=======
+            "php artisan clear-compiled"
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         ],
         "post-update-cmd": [
             "php artisan optimize --force",
             "php artisan config:cache",
             "php artisan route:cache",
             "chmod -R 755 storage"
+<<<<<<< HEAD
         ],
         "post-create-project-cmd": [
             "php -r \"copy('.env.example', '.env');\"",
@@ -86,6 +135,8 @@
         ],
         "test": [
             "phpunit"
+=======
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         ]
     },
     "config": {
@@ -96,7 +147,11 @@
     },
     "extra": {
         "branch-alias": {
+<<<<<<< HEAD
             "dev-master": "2.0-dev"
+=======
+            "dev-master": "2.1-dev"
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         }
     },
     "minimum-stability": "dev",

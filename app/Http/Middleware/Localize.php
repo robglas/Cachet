@@ -32,7 +32,11 @@ class Localize
     protected $config;
 
     /**
+<<<<<<< HEAD
      * Constructs a new localize instance.
+=======
+     * Constructs a new localize middleware instance.
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
      *
      * @param \Illuminate\Config\Repository $config
      *

@@ -11,7 +11,11 @@
 
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
+<<<<<<< HEAD
 use CachetHQ\Cachet\Models\Setting;
+=======
+use CachetHQ\Cachet\Facades\Setting;
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 use CachetHQ\Cachet\Models\User;
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
@@ -101,7 +105,12 @@ class SettingsController extends Controller
 
         return View::make('dashboard.settings.app-setup')
             ->withPageTitle(trans('dashboard.settings.app-setup.app-setup').' - '.trans('dashboard.dashboard'))
+<<<<<<< HEAD
             ->withSubMenu($this->subMenu);
+=======
+            ->withSubMenu($this->subMenu)
+            ->withRawAppAbout(Setting::get('app_about'));
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
     }
 
     /**
@@ -197,8 +206,12 @@ class SettingsController extends Controller
         $redirectUrl = Session::get('redirect_to', route('dashboard.settings.setup'));
 
         if (Binput::get('remove_banner') === '1') {
+<<<<<<< HEAD
             $setting = Setting::where('name', 'app_banner');
             $setting->delete();
+=======
+            Setting::set('app_banner', null);
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         }
 
         if (Binput::hasFile('app_banner')) {
@@ -221,10 +234,17 @@ class SettingsController extends Controller
             }
 
             // Store the banner.
+<<<<<<< HEAD
             Setting::firstOrCreate(['name' => 'app_banner'])->update(['value' => base64_encode(file_get_contents($file->getRealPath()))]);
 
             // Store the banner type
             Setting::firstOrCreate(['name' => 'app_banner_type'])->update(['value' => $file->getMimeType()]);
+=======
+            Setting::set('app_banner', base64_encode(file_get_contents($file->getRealPath())));
+
+            // Store the banner type.
+            Setting::set('app_banner_type', $file->getMimeType());
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         }
 
         try {
@@ -233,7 +253,11 @@ class SettingsController extends Controller
                     $settingValue = rtrim($settingValue, '/');
                 }
 
+<<<<<<< HEAD
                 Setting::firstOrCreate(['name' => $settingName])->update(['value' => $settingValue]);
+=======
+                Setting::set($settingName, $settingValue);
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
             }
         } catch (Exception $e) {
             return Redirect::to($redirectUrl)->withErrors(trans('dashboard.settings.edit.failure'));

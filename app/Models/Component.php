@@ -41,7 +41,10 @@ class Component extends Model implements HasPresenter
      * @var string[]
      */
     protected $casts = [
+<<<<<<< HEAD
         'id'          => 'int',
+=======
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         'order'       => 'int',
         'group_id'    => 'int',
         'description' => 'string',
@@ -158,6 +161,7 @@ class Component extends Model implements HasPresenter
     }
 
     /**
+<<<<<<< HEAD
      * Looks up the human readable version of the status.
      *
      * @return string
@@ -168,6 +172,8 @@ class Component extends Model implements HasPresenter
     }
 
     /**
+=======
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
      * Returns all of the tags on this component.
      *
      * @return string

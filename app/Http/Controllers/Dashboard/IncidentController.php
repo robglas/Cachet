@@ -12,23 +12,35 @@
 namespace CachetHQ\Cachet\Http\Controllers\Dashboard;
 
 use AltThree\Validator\ValidationException;
+<<<<<<< HEAD
 use CachetHQ\Cachet\Commands\Incident\RemoveIncidentCommand;
 use CachetHQ\Cachet\Commands\Incident\ReportIncidentCommand;
 use CachetHQ\Cachet\Commands\Incident\UpdateIncidentCommand;
+=======
+use CachetHQ\Cachet\Bus\Commands\Incident\RemoveIncidentCommand;
+use CachetHQ\Cachet\Bus\Commands\Incident\ReportIncidentCommand;
+use CachetHQ\Cachet\Bus\Commands\Incident\UpdateIncidentCommand;
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 use CachetHQ\Cachet\Models\Component;
 use CachetHQ\Cachet\Models\ComponentGroup;
 use CachetHQ\Cachet\Models\Incident;
 use CachetHQ\Cachet\Models\IncidentTemplate;
 use GrahamCampbell\Binput\Facades\Binput;
+<<<<<<< HEAD
 use Illuminate\Foundation\Bus\DispatchesJobs;
+=======
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 
 class IncidentController extends Controller
 {
+<<<<<<< HEAD
     use DispatchesJobs;
 
+=======
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
     /**
      * Stores the sub-sidebar tree list.
      *
@@ -39,7 +51,11 @@ class IncidentController extends Controller
     /**
      * Creates a new incident controller instance.
      *
+<<<<<<< HEAD
      * @return \CachetHQ\Cachet\Http\Controllers\DashScheduleController
+=======
+     * @return void
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
      */
     public function __construct()
     {
@@ -110,7 +126,11 @@ class IncidentController extends Controller
     public function createIncidentAction()
     {
         try {
+<<<<<<< HEAD
             $incident = $this->dispatch(new ReportIncidentCommand(
+=======
+            $incident = dispatch(new ReportIncidentCommand(
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                 Binput::get('name'),
                 Binput::get('status'),
                 Binput::get('message'),
@@ -202,7 +222,11 @@ class IncidentController extends Controller
      */
     public function deleteIncidentAction(Incident $incident)
     {
+<<<<<<< HEAD
         $this->dispatch(new RemoveIncidentCommand($incident));
+=======
+        dispatch(new RemoveIncidentCommand($incident));
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 
         return Redirect::route('dashboard.incidents.index')
             ->withSuccess(sprintf('%s %s', trans('dashboard.notifications.awesome'), trans('dashboard.incidents.delete.success')));
@@ -234,7 +258,11 @@ class IncidentController extends Controller
     public function editIncidentAction(Incident $incident)
     {
         try {
+<<<<<<< HEAD
             $incident = $this->dispatch(new UpdateIncidentCommand(
+=======
+            $incident = dispatch(new UpdateIncidentCommand(
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                 $incident,
                 Binput::get('name'),
                 Binput::get('status'),

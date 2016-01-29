@@ -67,6 +67,10 @@ return [
     'regex'                => ':attribute Format ist ungültig.',
     'required'             => ':attribute muss ausgefüllt sein.',
     'required_if'          => ':attribute muss ausgefüllt sein wenn :other :value ist.',
+<<<<<<< HEAD
+=======
+    'required_unless'      => 'The :attribute field is required unless :other is in :values.',
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
     'required_with'        => ':attribute muss angegeben werden wenn :values ausgefüllt wurde.',
     'required_with_all'    => ':attribute muss angegeben werden, wenn :values ausgefüllt wurde.',
     'required_without'     => ':attribute muss angegeben werden wenn :values nicht ausgefüllt wurde.',

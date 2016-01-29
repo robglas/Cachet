@@ -25,7 +25,11 @@
                                 @if($components->count() > 1)
                                 <span class="drag-handle"><i class="ion-drag"></i></span>
                                 @endif
+<<<<<<< HEAD
                                 {{ $component->name }} <small>{{ $component->humanStatus }}</small>
+=======
+                                {{ $component->name }} <small>{{ $component->human_status }}</small>
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                             </h4>
                             @if($component->group)
                             <p><small>{{ trans('dashboard.components.listed_group', ['name' => $component->group->name]) }}</small></p>

@@ -37,7 +37,11 @@
                         <select name="env[cache_driver]" class="form-control" required>
                             <option disabled>{{ trans('forms.setup.cache_driver') }}</option>
                             @foreach($cache_drivers as $driver => $driverName)
+<<<<<<< HEAD
                             <option value="{{ $driver }}" {{ Input::old('env.cache_driver') == $driver ? "selected" : null }}>{{ $driverName }}</option>
+=======
+                            <option value="{{ $driver }}" {{ Binput::old('env.cache_driver') == $driver ? "selected" : null }}>{{ $driverName }}</option>
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                             @endforeach
                         </select>
                         @if($errors->has('env.cache_driver'))
@@ -49,7 +53,11 @@
                         <select name="env[session_driver]" class="form-control" required>
                             <option disabled>{{ trans('forms.setup.session_driver') }}</option>
                             @foreach($cache_drivers as $driver => $driverName)
+<<<<<<< HEAD
                             <option value="{{ $driver }}" {{ Input::old('env.session_driver') == $driver ? "selected" : null }}>{{ $driverName }}</option>
+=======
+                            <option value="{{ $driver }}" {{ Binput::old('env.session_driver') == $driver ? "selected" : null }}>{{ $driverName }}</option>
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                             @endforeach
                         </select>
                         @if($errors->has('env.session_driver'))
@@ -68,14 +76,22 @@
                 <fieldset>
                     <div class="form-group">
                         <label>{{ trans('forms.setup.site_name') }}</label>
+<<<<<<< HEAD
                         <input type="text" name="settings[app_name]" class="form-control" placeholder="{{ trans('forms.setup.site_name') }}" value="{{ Input::old('settings.app_name', '') }}" required>
+=======
+                        <input type="text" name="settings[app_name]" class="form-control" placeholder="{{ trans('forms.setup.site_name') }}" value="{{ Binput::old('settings.app_name', '') }}" required>
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                         @if($errors->has('settings.app_name'))
                         <span class="text-danger">{{ $errors->first('settings.app_name') }}</span>
                         @endif
                     </div>
                     <div class="form-group">
                         <label>{{ trans('forms.setup.site_domain') }}</label>
+<<<<<<< HEAD
                         <input type="text" name="settings[app_domain]" class="form-control" placeholder="{{ trans('forms.setup.site_domain') }}" value="{{ Input::old('settings.app_domain', url()) }}" required>
+=======
+                        <input type="text" name="settings[app_domain]" class="form-control" placeholder="{{ trans('forms.setup.site_domain') }}" value="{{ Binput::old('settings.app_domain', url('/')) }}" required>
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                         @if($errors->has('settings.app_domain'))
                         <span class="text-danger">{{ $errors->first('settings.app_domain') }}</span>
                         @endif
@@ -87,7 +103,11 @@
                             @foreach($timezones as $region => $list)
                             <optgroup label="{{ $region }}">
                             @foreach($list as $timezone => $name)
+<<<<<<< HEAD
                             <option value="{{ $timezone }}" @if(Input::old('settings.app_timezone') == $timezone) selected @endif>
+=======
+                            <option value="{{ $timezone }}" @if(Binput::old('settings.app_timezone') == $timezone) selected @endif>
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                                 {{ $name }}
                             </option>
                             @endforeach
@@ -103,7 +123,11 @@
                         <select name="settings[app_locale]" class="form-control" required>
                             <option value="">Select Language</option>
                             @foreach($langs as $lang => $name)
+<<<<<<< HEAD
                             <option value="{{ $lang }}" @if(Input::old('settings.app_locale') == $lang || $user_language == $lang) selected @endif>
+=======
+                            <option value="{{ $lang }}" @if(Binput::old('settings.app_locale') == $lang || $user_language == $lang) selected @endif>
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                                 {{ $name }}
                             </option>
                             @endforeach
@@ -133,21 +157,33 @@
                 <fieldset>
                     <div class="form-group">
                         <label>{{ trans("forms.setup.username") }}</label>
+<<<<<<< HEAD
                         <input type="text" name="user[username]" class="form-control" placeholder="{{ trans('forms.setup.username') }}" value="{{ Input::old('user.username', '') }}" required>
+=======
+                        <input type="text" name="user[username]" class="form-control" placeholder="{{ trans('forms.setup.username') }}" value="{{ Binput::old('user.username', '') }}" required>
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                         @if($errors->has('user.username'))
                         <span class="text-danger">{{ $errors->first('user.username') }}</span>
                         @endif
                     </div>
                     <div class="form-group">
                         <label>{{ trans("forms.setup.email") }}</label>
+<<<<<<< HEAD
                         <input type="text" name="user[email]" class="form-control" placeholder="{{ trans('forms.setup.email') }}" value="{{ Input::old('user.email', '') }}" required>
+=======
+                        <input type="text" name="user[email]" class="form-control" placeholder="{{ trans('forms.setup.email') }}" value="{{ Binput::old('user.email', '') }}" required>
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                         @if($errors->has('user.email'))
                         <span class="text-danger">{{ $errors->first('user.email') }}</span>
                         @endif
                     </div>
                     <div class="form-group">
                         <label>{{ trans("forms.setup.password") }}</label>
+<<<<<<< HEAD
                         <input type="password" name="user[password]" class="form-control password-strength" placeholder="{{ trans('forms.setup.password') }}" value="{{ Input::old('user.password', '') }}" required>
+=======
+                        <input type="password" name="user[password]" class="form-control password-strength" placeholder="{{ trans('forms.setup.password') }}" value="{{ Binput::old('user.password', '') }}" required>
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                         <div class="strengthify-wrapper"></div>
                         @if($errors->has('user.password'))
                         <span class="text-danger">{{ $errors->first('user.password') }}</span>

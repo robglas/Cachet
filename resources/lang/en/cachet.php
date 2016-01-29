@@ -52,9 +52,16 @@ return [
     // Metrics
     'metrics' => [
         'filter' => [
+<<<<<<< HEAD
             'hourly'  => 'Last 12 Hours',
             'weekly'  => 'Week',
             'monthly' => 'Month',
+=======
+            'last_hour' => 'Last Hour',
+            'hourly'    => 'Last 12 Hours',
+            'weekly'    => 'Week',
+            'monthly'   => 'Month',
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         ],
     ],
 
@@ -63,6 +70,7 @@ return [
         'subscribe' => 'Subscribe to get the most recent updates',
         'button'    => 'Subscribe',
         'email'     => [
+<<<<<<< HEAD
             'subscribe'    => 'Subscribe to email updates.',
             'subscribed'   => 'You\'ve been subscribed to email notifications, please check your email to confirm your subscription.',
             'verified'     => 'Your email subscription has been confirmed. Thank you!',
@@ -70,6 +78,16 @@ return [
             'unsubscribed' => 'Your email subscription has been cancelled.',
             'failure'      => 'Something went wrong with the subscription.',
             'verify'       => [
+=======
+            'subscribe'          => 'Subscribe to email updates.',
+            'subscribed'         => 'You\'ve been subscribed to email notifications, please check your email to confirm your subscription.',
+            'verified'           => 'Your email subscription has been confirmed. Thank you!',
+            'unsubscribe'        => 'Unsubscribe from email updates.',
+            'unsubscribed'       => 'Your email subscription has been cancelled.',
+            'failure'            => 'Something went wrong with the subscription.',
+            'already-subscribed' => 'Cannot subscribe :email because they\'re already subscribed.',
+            'verify'             => [
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
                 'text'           => "Please confirm your email subscription to :app_name status updates.\n:link\nThank you, :app_name",
                 'html-preheader' => 'Please confirm your email subscription to :app_name status updates.',
                 'html'           => '<p>Please confirm your email subscription to :app_name status updates.</p><p><a href=":link">:link</a></p><p>Thank you, :app_name</p>',
@@ -106,6 +124,13 @@ return [
         'failure'  => 'Something went wrong with the signup.',
     ],
 
+<<<<<<< HEAD
+=======
+    'system' => [
+        'update' => 'There is a newer version of Cachet available. You can learn how to update <a href="https://docs.cachethq.io/docs/updating-cachet">here</a>!',
+    ],
+
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
     // Other
     'powered_by'      => ':app Status Page is powered by <a href="https://cachethq.io" class="links">Cachet</a>.',
     'about_this_site' => 'About This Site',

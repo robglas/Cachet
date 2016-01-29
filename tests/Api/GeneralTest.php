@@ -11,9 +11,19 @@
 
 namespace CachetHQ\Tests\Cachet\Api;
 
+<<<<<<< HEAD
 use CachetHQ\Tests\Cachet\AbstractTestCase;
 
 class GeneralTest extends AbstractTestCase
+=======
+/**
+ * This is the general test class.
+ *
+ * @author James Brooks <james@alt-three.com>
+ * @author Graham Campbell <graham@alt-three.com>
+ */
+class GeneralTest extends AbstractApiTestCase
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 {
     public function testGetPing()
     {

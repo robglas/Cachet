@@ -11,7 +11,11 @@
 
 namespace CachetHQ\Cachet\Http\Controllers;
 
+<<<<<<< HEAD
 use CachetHQ\Cachet\Models\Setting;
+=======
+use CachetHQ\Cachet\Facades\Setting;
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 use CachetHQ\Cachet\Models\User;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
@@ -41,13 +45,59 @@ class SetupController extends Controller
     ];
 
     /**
+<<<<<<< HEAD
      * Create a new setup controller instance.
+=======
+     * Array of step1 rules.
+     *
+     * @var string[]
+     */
+    protected $rulesStep1;
+
+    /**
+     * Array of step2 rules.
+     *
+     * @var string[]
+     */
+    protected $rulesStep2;
+
+    /**
+     * Array of step3 rules.
+     *
+     * @var string[]
+     */
+    protected $rulesStep3;
+
+    /**
+     * Create a new controller instance.
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
      *
      * @return void
      */
     public function __construct()
     {
+<<<<<<< HEAD
         $this->beforeFilter('csrf', ['only' => ['postCachet']]);
+=======
+        $this->rulesStep1 = [
+            'env.cache_driver'   => 'required|in:'.implode(',', array_keys($this->cacheDrivers)),
+            'env.session_driver' => 'required|in:'.implode(',', array_keys($this->cacheDrivers)),
+        ];
+
+        $this->rulesStep2 = [
+            'settings.app_name'     => 'required',
+            'settings.app_domain'   => 'required',
+            'settings.app_timezone' => 'required',
+            'settings.app_locale'   => 'required',
+            'settings.show_support' => 'bool',
+        ];
+
+        $this->rulesStep3 = [
+            'user.username' => ['required', 'regex:/\A(?!.*[:;]-\))[ -~]+\z/'],
+            'user.email'    => 'email|required',
+            'user.password' => 'required',
+        ];
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
     }
 
     /**
@@ -90,10 +140,14 @@ class SetupController extends Controller
     {
         $postData = Binput::all();
 
+<<<<<<< HEAD
         $v = Validator::make($postData, [
             'env.cache_driver'   => 'required|in:'.implode(',', array_keys($this->cacheDrivers)),
             'env.session_driver' => 'required|in:'.implode(',', array_keys($this->cacheDrivers)),
         ]);
+=======
+        $v = Validator::make($postData, $this->rulesStep1);
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 
         if ($v->passes()) {
             return Response::json(['status' => 1]);
@@ -111,6 +165,7 @@ class SetupController extends Controller
     {
         $postData = Binput::all();
 
+<<<<<<< HEAD
         $v = Validator::make($postData, [
             'env.cache_driver'      => 'required|in:'.implode(',', array_keys($this->cacheDrivers)),
             'env.session_driver'    => 'required|in:'.implode(',', array_keys($this->cacheDrivers)),
@@ -120,6 +175,9 @@ class SetupController extends Controller
             'settings.app_locale'   => 'required',
             'settings.show_support' => 'bool',
         ]);
+=======
+        $v = Validator::make($postData, $this->rulesStep1 + $this->rulesStep2);
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 
         if ($v->passes()) {
             return Response::json(['status' => 1]);
@@ -137,6 +195,7 @@ class SetupController extends Controller
     {
         $postData = Binput::all();
 
+<<<<<<< HEAD
         $v = Validator::make($postData, [
             'env.cache_driver'      => 'required|in:'.implode(',', array_keys($this->cacheDrivers)),
             'env.session_driver'    => 'required|in:'.implode(',', array_keys($this->cacheDrivers)),
@@ -149,6 +208,9 @@ class SetupController extends Controller
             'user.email'            => 'email|required',
             'user.password'         => 'required',
         ]);
+=======
+        $v = Validator::make($postData, $this->rulesStep1 + $this->rulesStep2 + $this->rulesStep3);
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 
         if ($v->passes()) {
             // Pull the user details out.
@@ -158,7 +220,11 @@ class SetupController extends Controller
                 'username' => $userDetails['username'],
                 'email'    => $userDetails['email'],
                 'password' => $userDetails['password'],
+<<<<<<< HEAD
                 'level'    => 1,
+=======
+                'level'    => User::LEVEL_ADMIN,
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
             ]);
 
             Auth::login($user);
@@ -166,10 +232,14 @@ class SetupController extends Controller
             $settings = array_pull($postData, 'settings');
 
             foreach ($settings as $settingName => $settingValue) {
+<<<<<<< HEAD
                 Setting::create([
                     'name'  => $settingName,
                     'value' => $settingValue,
                 ]);
+=======
+                Setting::set($settingName, $settingValue);
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
             }
 
             $envData = array_pull($postData, 'env');
@@ -222,7 +292,11 @@ class SetupController extends Controller
      */
     protected function keyGenerate()
     {
+<<<<<<< HEAD
         $key = str_random(42);
+=======
+        $key = str_random(32);
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 
         $path = base_path('.env');
 

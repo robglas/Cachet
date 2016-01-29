@@ -23,6 +23,7 @@ class Incident extends Model implements HasPresenter
     use SoftDeletes, ValidatingTrait;
 
     /**
+<<<<<<< HEAD
      * The accessors to append to the model's serialized form.
      *
      * @var string[]
@@ -30,12 +31,17 @@ class Incident extends Model implements HasPresenter
     protected $appends = ['human_status'];
 
     /**
+=======
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
      * The attributes that should be casted to native types.
      *
      * @var string[]
      */
     protected $casts = [
+<<<<<<< HEAD
         'id'           => 'int',
+=======
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         'visible'      => 'int',
         'scheduled_at' => 'date',
         'deleted_at'   => 'date',
@@ -119,6 +125,7 @@ class Incident extends Model implements HasPresenter
     }
 
     /**
+<<<<<<< HEAD
      * Returns a human readable version of the status.
      *
      * @return string
@@ -131,6 +138,8 @@ class Incident extends Model implements HasPresenter
     }
 
     /**
+=======
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
      * Returns whether the "incident" is scheduled or not.
      *
      * @return bool

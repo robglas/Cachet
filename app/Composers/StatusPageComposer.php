@@ -56,7 +56,11 @@ class StatusPageComposer
         $scheduledMaintenance = Incident::scheduled()->orderBy('scheduled_at')->get();
 
         // Component & Component Group lists.
+<<<<<<< HEAD
         $usedComponentGroups = Component::enabled()->where('group_id', '>', 0)->groupBy('group_id')->lists('group_id');
+=======
+        $usedComponentGroups = Component::enabled()->where('group_id', '>', 0)->groupBy('group_id')->pluck('group_id');
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
         $componentGroups = ComponentGroup::whereIn('id', $usedComponentGroups)->orderBy('order')->get();
         $ungroupedComponents = Component::enabled()->where('group_id', 0)->orderBy('order')->orderBy('created_at')->get();
 

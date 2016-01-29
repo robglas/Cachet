@@ -71,6 +71,10 @@ return [
     'regex'                => 'Il formato del campo :attribute non è valido.',
     'required'             => 'Il campo :attribute è richiesto.',
     'required_if'          => 'Il campo :attribute è richiesto quando :other è :value.',
+<<<<<<< HEAD
+=======
+    'required_unless'      => 'The :attribute field is required unless :other is in :values.',
+>>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
     'required_with'        => 'Il campo :attribute è richiesto quando :values è presente.',
     'required_with_all'    => 'Il campo :attribute è richiesto quando :values è presente.',
     'required_without'     => 'Il campo :attribute è richiesto quando :values non è presente.',
