@@ -7,13 +7,10 @@
     <meta name="env" content="{{ app('env') }}">
     <meta name="token" content="{{ csrf_token() }}">
 
-<<<<<<< HEAD
     <link rel="alternate" type="application/atom+xml" href="/atom" title="{{ $app_name.' | Cachet' }} - Atom Feed">
     <link rel="alternate" type="application/rss+xml" href="/rss" title="{{ $app_name.' | Cachet' }} - RSS Feed">
-=======
     <link rel="alternate" type="application/atom+xml" href="/atom" title="{{ $site_title }} - Atom Feed">
     <link rel="alternate" type="application/rss+xml" href="/rss" title="{{ $site_title }} - RSS Feed">
->>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 
     <!-- Mobile friendliness -->
     <meta name="HandheldFriendly" content="True">
@@ -40,11 +37,8 @@
     <link rel="apple-touch-icon" sizes="144x144" href="/img/apple-touch-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="/img/apple-touch-icon-152x152.png">
 
-<<<<<<< HEAD
     <title>{{ $app_name }}</title>
-=======
     <title>{{ $site_title }}</title>
->>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{{ elixir('dist/css/all.css') }}">
@@ -66,18 +60,15 @@
     <script src="{{ elixir('dist/js/all.js') }}"></script>
 </head>
 <body class="status-page">
-<<<<<<< HEAD
 
     @include('partials.banner')
 
     <div class="container">
     @yield('content')
-=======
     @include('partials.banner')
 
     <div class="container">
         @yield('content')
->>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
     </div>
 
     @include('partials.footer')
