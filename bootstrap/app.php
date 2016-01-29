@@ -13,7 +13,6 @@ $app = new Illuminate\Foundation\Application(
     realpath(__DIR__.'/../')
 );
 $app = new Illuminate\Foundation\Application(realpath(__DIR__.'/../'));
->>>>>>> e5c137f82b44a4fbd2d63c36abbfe0cec29ead52
 
 /*
 |--------------------------------------------------------------------------
